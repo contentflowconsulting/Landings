@@ -24,9 +24,9 @@
       position: relative;
       background: transparent;
       color: white !important;
-      font-size: 1.25rem;
-      padding: 1.5rem 2.5rem;
-      border: 2px solid transparent;
+      font-size: 1.4rem;
+      padding: 1.75rem 3rem;
+      border: 2px solid rgba(0,212,255,0.3);
       border-radius: 9999px;
       overflow: hidden;
       transition: all 0.3s ease;
@@ -46,6 +46,12 @@
       mask-composite: exclude;
       animation: borderFlow 3s linear infinite;
       z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .btn-cta:hover::before {
+      opacity: 1;
     }
     
     @keyframes borderFlow {
@@ -59,8 +65,6 @@
     
     .card-dark:hover {
       transform: scale(1.05);
-      box-shadow: 0 10px 40px rgba(0,212,255,0.2);
-      border-color: rgba(0,212,255,0.3);
     }
     
     .video-wrapper {
