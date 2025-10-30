@@ -12,7 +12,7 @@
     body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--fg)}
     .gradient-text{background:linear-gradient(135deg,var(--brand-1),var(--brand-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .shadow-glow{box-shadow:0 0 30px rgba(0,212,255,.25)}
-    .card-dark{background:rgba(20,20,20,.6);border:1px solid rgba(255,255,255,.05);border-radius:1rem;padding:2rem;transition:all 0.3s ease}
+    .card-dark{background:rgba(20,20,20,.6);border:1px solid rgba(255,255,255,.05);border-radius:1rem;padding:2.5rem;transition:transform 0.3s ease;font-size:1.125rem}
     details summary {cursor:pointer;}
     
     /* Efectos Hover */
@@ -24,13 +24,16 @@
       position: relative;
       background: transparent;
       color: white !important;
-      font-size: 1.4rem;
-      padding: 1.75rem 3rem;
-      border: 2px solid rgba(0,212,255,0.3);
+      font-size: 1.75rem;
+      font-weight: 700;
+      padding: 1.25rem 3.5rem;
+      border: 2px solid transparent;
       border-radius: 9999px;
       overflow: hidden;
       transition: all 0.3s ease;
       z-index: 1;
+      text-decoration: none;
+      display: inline-block;
     }
     
     .btn-cta::before {
@@ -46,7 +49,7 @@
       mask-composite: exclude;
       animation: borderFlow 3s linear infinite;
       z-index: -1;
-      opacity: 0;
+      opacity: 0.5;
       transition: opacity 0.3s ease;
     }
     
@@ -144,8 +147,8 @@
         </div>
       </div>
     </div>
-    <div class="text-center mt-12">
-      <a href="#fases" class="btn-cta inline-block rounded-full gradient-text border border-cyan-500 px-10 py-4 text-lg font-bold shadow-glow">Aplicar al Programa</a>
+    <div class="text-center mt-16">
+      <a href="#fases" class="btn-cta">Aplicar al Programa</a>
     </div>
   </section>
 
@@ -155,26 +158,26 @@
       <h2 class="text-center text-4xl md:text-5xl font-black mb-16">El sistema <span class="gradient-text">Content Flow</span></h2>
 
       <div class="card-dark">
-        <h3 class="text-xl font-bold mb-2">Marca Personal Híbrida</h3>
-        <p class="text-cyan-400 font-semibold mb-2">Orgánico + anuncios estratégicos</p>
+        <h3 class="text-2xl font-bold mb-2">Marca Personal Híbrida</h3>
+        <p class="text-cyan-400 font-semibold mb-2 text-lg">Orgánico + anuncios estratégicos</p>
         <p class="text-slate-400">Una marca personal 100% orgánica no tiene sentido si quieres vender. Integramos anuncios estratégicos de bajo costo que atraen a la audiencia ideal y perfilan tus redes para que dejen de ser solo contenido y empiecen a vender.</p>
       </div>
 
       <div class="card-dark">
-        <h3 class="text-xl font-bold mb-2">Sistema de Alta Conversión</h3>
-        <p class="text-cyan-400 font-semibold mb-2">5‑7 llamadas al día con clientes calificados</p>
+        <h3 class="text-2xl font-bold mb-2">Sistema de Alta Conversión</h3>
+        <p class="text-cyan-400 font-semibold mb-2 text-lg">5‑7 llamadas al día con clientes calificados</p>
         <p class="text-slate-400">Instalamos el mismo sistema probado que usamos para llenar agendas con 5‑7 llamadas de ventas al día con clientes realmente calificados, listos para comprar. Sin depender del algoritmo.</p>
       </div>
 
       <div class="card-dark">
-        <h3 class="text-xl font-bold mb-2">Sistema de Marca Personal</h3>
-        <p class="text-cyan-400 font-semibold mb-2">Instalamos el sistema en tus redes</p>
+        <h3 class="text-2xl font-bold mb-2">Sistema de Marca Personal</h3>
+        <p class="text-cyan-400 font-semibold mb-2 text-lg">Instalamos el sistema en tus redes</p>
         <p class="text-slate-400">Una marca personal real no improvisa. Cada publicación cumple un rol: posiciona, educa y avanza a tu audiencia hacia la compra. Nosotros instalamos contigo este sistema en tus redes.</p>
         <img src="3easyvsl.png" alt="Gráfico de crecimiento" class="w-full rounded-xl shadow-glow mt-6"/>
       </div>
 
       <div class="text-center mt-12">
-        <a href="#autoridad" class="btn-cta inline-block rounded-full gradient-text border border-cyan-500 px-10 py-4 text-lg font-bold shadow-glow">Aplicar al Programa</a>
+        <a href="#autoridad" class="btn-cta">Aplicar al Programa</a>
       </div>
     </div>
   </section>
@@ -213,7 +216,7 @@
         </div>
       </div>
       <div class="text-center mt-12">
-        <a href="#entregables" class="btn-cta inline-block rounded-full gradient-text border border-cyan-500 px-10 py-4 text-lg font-bold shadow-glow">Aplicar al Programa</a>
+        <a href="#entregables" class="btn-cta">Aplicar al Programa</a>
       </div>
     </div>
   </section>
@@ -280,7 +283,7 @@
       </div>
 
       <div class="text-center mt-12">
-        <a href="#legal" class="btn-cta inline-block rounded-full gradient-text border border-cyan-500 px-10 py-4 text-lg font-bold shadow-glow">Aplicar al Programa</a>
+        <a href="#legal" class="btn-cta">Aplicar al Programa</a>
       </div>
     </div>
   </section>
