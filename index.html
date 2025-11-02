@@ -142,6 +142,12 @@
       text-align: center;
     }
     
+    @media (max-width: 768px) {
+      .titulo-principal {
+        font-size: 1.7rem !important;
+      }
+    }
+    
     .texto-mismo-sistema {
       text-align: center;
       max-width: 90%;
@@ -179,22 +185,18 @@
     
     /* PÁGINA 4 - TÍTULOS MÁS PEQUEÑOS */
     @media (max-width: 768px) {
-      .titulo-acompanamiento {
-        font-size: 1.275rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 2rem !important;
-      }
-      
       .titulo-entregables {
-        font-size: 1.275rem !important;
+        font-size: 1.65rem !important;
         line-height: 1.3 !important;
-        margin-bottom: 2rem !important;
+        margin-bottom: 1rem !important;
+        margin-top: 0.5rem !important;
       }
       
       .texto-necesitas {
         text-align: center !important;
         font-size: 0.9rem !important;
         margin-bottom: 1.5rem !important;
+        margin-top: 0.5rem !important;
       }
       
       .contenido-expandible {
@@ -205,7 +207,12 @@
       .badge-text {
         font-size: 0.75rem !important;
         padding: 0.5rem 0.75rem !important;
-        margin-bottom: 2rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.5rem !important;
+      }
+      
+      .seccion-entregables {
+        padding-top: 1.5rem !important;
       }
     }
     
@@ -227,7 +234,12 @@
     /* PÁGINA 5 - LEGAL */
     @media (max-width: 768px) {
       .texto-legal {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
+      }
+      
+      .seccion-legal {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
       }
     }
   </style>
@@ -330,13 +342,13 @@
   </section>
 
   <!-- Página 4: Entregables -->
-  <section id="entregables" class="bg-gradient-to-b from-black via-slate-950 to-black px-8 py-28 border-t border-slate-900">
+  <section id="entregables" class="seccion-entregables bg-gradient-to-b from-black via-slate-950 to-black px-8 py-28 border-t border-slate-900">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center my-8">
+      <div class="text-center my-2">
         <span class="badge-text px-3 py-3 rounded-md border border-blue-900 bg-gray-700 text-white text-sm md:text-base tracking-wide uppercase font-bold inline-block" style="font-family:'Poppins',sans-serif">ESTO ES LO QUE OBTIENES AL ENTRAR</span>
       </div>
 
-      <h3 class="titulo-entregables text-center text-3xl md:text-4xl font-black mb-8 uppercase tracking-wide" style="font-family:'Poppins', sans-serif">ENTREGABLES DEL PROGRAMA<br/> <span class="gradient-text">CONTENT FLOW</span></h3>
+      <h3 class="titulo-entregables text-center text-3xl md:text-4xl font-black mb-4 uppercase tracking-wide" style="font-family:'Poppins', sans-serif">ENTREGABLES DEL PROGRAMA<br/> <span class="gradient-text">CONTENT FLOW</span></h3>
 
       <p class="texto-necesitas text-center text-gray-300 font-semibold max-w-xl mx-auto mb-6 leading-snug px-4" style="line-height:1.6">Todo lo que necesitas para <span class="text-gray-200 font-bold">acelerar tu negocio</span> de servicios/infoproductos: estrategia, producción, captación y optimización, unificados en un <span class="text-gray-200 font-bold">sistema</span>.</p>
 
@@ -395,8 +407,8 @@
   </section>
 
   <!-- Página 5: Responsabilidad Legal / Garantías -->
-  <section id="legal" class="bg-black px-8 py-16 border-t border-slate-900">
-    <div class="max-w-5xl mx-auto text-center text-slate-500 text-sm space-y-6">
+  <section id="legal" class="seccion-legal bg-black px-8 py-16 border-t border-slate-900">
+    <div class="max-w-5xl mx-auto text-center text-slate-500 text-sm space-y-4">
       <p class="texto-legal"><strong>Aviso importante:</strong> Los resultados mostrados corresponden a experiencias reales de clientes, pero no garantizan resultados idénticos. El nivel de resultados que cada persona obtenga dependerá de su compromiso, ejecución y circunstancias individuales.</p>
       <p class="texto-legal">Content Flow es un programa de formación y acompañamiento estratégico, no asesoría financiera. Los testimonios compartidos reflejan experiencias auténticas, sin constituir promesas de resultados.</p>
       <p class="texto-legal">Al aplicar al programa, usted confirma haber leído y aceptado nuestros términos y condiciones.</p>
