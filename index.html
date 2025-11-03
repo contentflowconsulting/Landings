@@ -2,423 +2,369 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>puntodeinflexionconsulting</title>
-  <meta name="description" content="Instala tu propio Ecosistema Hibrido en Instagram y convierte tu marca personal en un sistema de ventas high-ticket." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Content Flow / Form</title>
+
+  <!-- Estilos -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {--brand-1:#00d4ff; --brand-2:#0099ff; --bg:#000; --fg:#fff}
-    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--fg)}
-    .gradient-text{background:linear-gradient(135deg,var(--brand-1),var(--brand-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .shadow-glow{box-shadow:0 0 30px rgba(0,212,255,.25)}
-    .card-dark{background:rgba(20,20,20,.6);border:1px solid rgba(255,255,255,.05);border-radius:1rem;padding:2.5rem;transition:transform 0.3s ease;font-size:1.125rem}
-    details summary {cursor:pointer;}
-    
-    /* Efectos Hover */
-    .logo-hover {
-      transition: none;
-    }
-    
-    .btn-cta {
-      position: relative;
-      background: transparent;
-      color: white !important;
-      font-size: 1.5rem;
-      font-weight: 700;
-      padding: 0.875rem 2.5rem;
-      border: 2px solid transparent;
-      border-radius: 9999px;
-      background-image: linear-gradient(#000, #000), linear-gradient(90deg, #00d4ff, #ffffff, #00d4ff);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-      background-size: 100%, 200% 100%;
-      animation: borderFlowBtn 3s linear infinite;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      white-space: nowrap;
-    }
-    
-    @media (max-width: 768px) {
-      .btn-cta {
-        font-size: 1.125rem;
-        padding: 0.75rem 1.75rem;
-      }
-    }
-    
-    @keyframes borderFlowBtn {
-      0% { background-position: 0% 0%, 0% 0%; }
-      100% { background-position: 0% 0%, 200% 0%; }
-    }
-    
-    .btn-cta:hover {
-      box-shadow: 0 0 20px rgba(0,212,255,0.4), 0 0 40px rgba(0,212,255,0.2);
-      background-image: linear-gradient(#000, #000), linear-gradient(90deg, #00d4ff, #ffffff, #00d4ff, #ffffff);
-    }
-    
-    @keyframes borderFlow {
-      0% { background-position: 0% 0%; }
-      100% { background-position: 200% 0%; }
-    }
-    
-    .btn-cta:hover {
-      box-shadow: 0 0 50px rgba(0,212,255,0.8), 0 0 100px rgba(0,212,255,0.4);
-    }
-    
-    .card-dark:hover {
-      transform: scale(1.05);
-    }
-    
-    .video-wrapper {
-      transition: all 0.3s ease;
-    }
-    .video-wrapper:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 50px rgba(0,212,255,0.4);
-    }
-    
-    .testimonial-card {
-      transition: all 0.3s ease;
-    }
-    .testimonial-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 50px rgba(0,212,255,0.25);
-    }
-    
-    .stat-card {
-      transition: all 0.3s ease;
-    }
-    .stat-card:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px rgba(0,212,255,0.3);
-    }
-    
-    .ent-card {
-      background:rgba(20,20,20,.6);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:16px;
-      padding:16px 20px;
-      transition: all 0.3s ease;
-    }
-    .ent-card:hover {
-      border-color: rgba(0,212,255,0.6);
-      box-shadow: 0 0 20px rgba(0,212,255,0.4);
-    }
-    
-    .badge-square{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:40px;
-      height:40px;
-      border-radius:8px;
-      background:linear-gradient(135deg,var(--brand-1),var(--brand-2));
-      color:#001018;
-      font-weight:800;
-      transition: all 0.3s ease;
-    }
-    .ent-card:hover .badge-square {
-      transform: none;
-    }
-    
-    details[open] .chev{transform:rotate(180deg)}
-    
-    /* NUEVOS ESTILOS RESPONSIVE PÁGINA 1 */
-    .texto-para-creativos {
-      text-align: center;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    @media (max-width: 768px) {
-      .texto-para-creativos {
-        font-size: 0.8rem !important;
-      }
-    }
-    
-    .titulo-principal {
-      text-align: center;
-    }
-    
-    @media (max-width: 768px) {
-      .titulo-principal {
-        font-size: 1.7rem !important;
-      }
-    }
-    
-    .texto-mismo-sistema {
-      text-align: center;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    @media (max-width: 768px) {
-      .texto-mismo-sistema {
-        font-size: 0.72rem !important;
-      }
-    }
-    
-    /* PÁGINA 3 - ESTADÍSTICAS RESPONSIVE */
-    @media (max-width: 768px) {
-      .stats-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1.5rem !important;
-      }
-      
-      .stat-card {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      
-      .stat-number {
-        margin-bottom: 0.75rem !important;
-      }
-      
-      .titulo-resultados {
-        font-size: 1.7rem !important;
-      }
-    }
-    
-    /* PÁGINA 4 - TÍTULOS MÁS PEQUEÑOS */
-    @media (max-width: 768px) {
-      .titulo-entregables {
-        font-size: 1.65rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        margin-top: 0.5rem !important;
-      }
-      
-      .texto-necesitas {
-        text-align: center !important;
-        font-size: 0.9rem !important;
-        margin-bottom: 1.5rem !important;
-        margin-top: 0.5rem !important;
-      }
-      
-      .contenido-expandible {
-        text-align: left !important;
-        margin-top: 1rem !important;
-      }
-      
-      .badge-text {
-        font-size: 0.75rem !important;
-        padding: 0.5rem 0.75rem !important;
-        margin-top: 0 !important;
-        margin-bottom: 0.5rem !important;
-      }
-      
-      .seccion-entregables {
-        padding-top: 1.5rem !important;
-      }
-    }
-    
-    /* PÁGINA 2 - VEHÍCULO */
-    @media (max-width: 768px) {
-      .vehiculo-titulo {
-        font-size: 1.8rem !important;
-      }
-      
-      .vehiculo-subtitulo {
-        font-size: 1rem !important;
-      }
-      
-      .vehiculo-descripcion {
-        font-size: 0.9rem !important;
-      }
-    }
-    
-    /* PÁGINA 5 - LEGAL */
-    @media (max-width: 768px) {
-      .texto-legal {
-        font-size: 0.75rem !important;
-      }
-      
-      .seccion-legal {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-      }
-    }
-  </style>
+
+  <!-- React 18 + Babel (para JSX en el navegador) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body class="antialiased">
+<body class="bg-white">
+  <div id="root"></div>
 
-  <!-- Página 1: VSL -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 pt-4 pb-16 bg-black">
-    <div class="mb-4 md:mb-6 mt-0">
-      <img src="Content Flow Ofic.png" alt="Content Flow Logo" class="logo-hover mx-auto w-24 md:w-40 drop-shadow-lg" />
-    </div>
-    <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-10 md:space-y-0 md:space-x-20">
-      <div class="flex-1 max-w-xl space-y-4 md:space-y-6">
-        <p class="texto-para-creativos text-slate-300 text-lg md:text-3xl font-medium leading-snug" style="font-family: 'Poppins', sans-serif;">Para creativos, mentores y marcas personales que buscan escalar sin quemarse</p>
-        <h1 class="titulo-principal text-2xl md:text-4xl font-black leading-tight">
-          INSTALA TU <span class="gradient-text">ECOSISTEMA HIBRIDO</span><br/>
-          Y CONVIERTE SEGUIDORES EN CLIENTES
-        </h1>
-        <p class="texto-mismo-sistema text-slate-200 text-lg md:text-2xl leading-snug">El mismo sistema híbrido de <span class="font-semibold">contenido + anuncios + automatización</span> que usamos para generar clientes high-ticket en Instagram.</p>
-      </div>
-      <div class="flex-1 max-w-2xl video-wrapper shadow-glow rounded-xl overflow-hidden" style="transform: scale(1.1);">
-        <div class="relative pt-[56.25%]">
-          <iframe class="absolute inset-0 w-full h-full rounded-xl" src="https://www.youtube.com/embed/VIDEO_ID" title="VSL Content Flow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-12 md:mt-16">
-      <a href="https://contentflowconsulting.github.io/contentflow/" class="btn-cta">Aplicar al Programa</a>
-    </div>
-  </section>
+  <script type="text/babel">
+    // --------- Iconos SVG (React Components) ----------
+    const ArrowRight = (props) => (
+      <svg viewBox="0 0 24 24" width="1em" height="1em" {...props} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path>
+      </svg>
+    );
+    const CheckCircle2 = (props) => (
+      <svg viewBox="0 0 24 24" width="1em" height="1em" {...props} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path>
+      </svg>
+    );
+    const Mail = (props) => (
+      <svg viewBox="0 0 24 24" width="1em" height="1em" {...props} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 7l-10 6L2 7"></path>
+      </svg>
+    );
+    const MessageCircle = (props) => (
+      <svg viewBox="0 0 24 24" width="1em" height="1em" {...props} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+    );
+    // ---------------------------------------------------
 
-  <!-- Página 2: Vehículo -->
-  <section id="fases" class="bg-gradient-to-b from-black via-slate-950 to-black px-8 py-24">
-    <div class="max-w-3xl mx-auto space-y-12">
-      <h2 class="text-center text-4xl md:text-5xl font-black mb-16">El sistema <span class="gradient-text">Content Flow</span></h2>
+    function LeadQualificationForm() {
+      const [formData, setFormData] = React.useState({
+        fullName: '',
+        phone: '',
+        email: '',
+        weeklyClients: '',
+        dailyCalls: '',
+        contentStrategy: '',
+        salesSystem: '',
+        monthlyRevenue: ''
+      });
+      const [result, setResult] = React.useState(null);
+      const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-      <div class="card-dark">
-        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">Marca Personal Híbrida</h3>
-        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">Orgánico + anuncios estratégicos</p>
-        <p class="vehiculo-descripcion text-slate-400">Una marca personal 100% orgánica no tiene sentido si quieres vender. Integramos anuncios estratégicos de bajo costo que atraen a la audiencia ideal y perfilan tus redes para que dejen de ser solo contenido y empiecen a vender.</p>
-      </div>
+      const handleInputChange = (field, value) => {
+        setFormData(prev => ({ ...prev, [field]: value }));
+      };
 
-      <div class="card-dark">
-        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">Sistema de Alta Conversión</h3>
-        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">5-7 llamadas al día con clientes calificados</p>
-        <p class="vehiculo-descripcion text-slate-400">Instalamos el mismo sistema probado que usamos para llenar agendas con 5-7 llamadas de ventas al día con clientes realmente calificados, listos para comprar. Sin depender del algoritmo.</p>
-      </div>
+      const handleSubmit = async () => {
+        setIsSubmitting(true);
+        
+        try {
+          // Preparar los datos para enviar a Make
+          const dataToSend = {
+            nombreCompleto: formData.fullName,
+            telefono: formData.phone,
+            email: formData.email,
+            clientesPorSemana: formData.weeklyClients,
+            llamadasPorDia: formData.dailyCalls,
+            estrategiaContenido: formData.contentStrategy,
+            sistemaVentas: formData.salesSystem,
+            facturacionMensual: formData.monthlyRevenue,
+            fechaEnvio: new Date().toISOString()
+          };
 
-      <div class="card-dark">
-        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">Sistema de Contenido Estratégico</h3>
-        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">Instalamos el sistema en tus redes para convertir seguidores en clientes</p>
-        <p class="vehiculo-descripcion text-slate-400">Cada publicación tiene un propósito: posicionar, educar y avanzar a tu audiencia hacia la compra. Diseñamos contigo un calendario estratégico y automatizado para que tu contenido deje de ser aleatorio y empiece a generar ventas todos los días.</p>
-      </div>
+          // Enviar a Make
+          const response = await fetch('https://hook.us2.make.com/etytpj8kh2h68l50k3vp9c2t3555pwt4', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataToSend)
+          });
 
-      <div class="text-center mt-12">
-        <a href="https://contentflowconsulting.github.io/contentflow/" class="btn-cta">Aplicar al Programa</a>
-      </div>
-    </div>
-  </section>
+          if (response.ok) {
+            // Mostrar resultado
+            setResult(true);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            alert('Hubo un error al enviar el formulario. Por favor intenta de nuevo.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Error de conexión. Por favor verifica tu internet e intenta de nuevo.');
+        } finally {
+          setIsSubmitting(false);
+        }
+      };
 
-  <!-- Página 3: Autoridad / Casos de Éxito -->
-  <section id="autoridad" class="bg-black px-8 py-24 border-t border-slate-900">
-    <div class="max-w-5xl mx-auto text-center">
-      <div class="mb-12">
-        <span class="px-3 py-3 rounded-md border border-blue-900 bg-gray-700 text-white text-sm md:text-base tracking-wide uppercase font-bold inline-block" style="font-family:'Poppins',sans-serif">ALGUNOS DE NUESTROS CLIENTES</span>
-      </div>
-      <p class="text-slate-400 mb-12">Antes de lanzar este nuevo sistema, ayudé a marcas personales, artistas y empresas a construir estructuras de venta, contenido y automatización que hoy siguen funcionando sin mí, y que ayudaron a pulir cada componente de este método.<br/><br/>El resultado: procesos claros, negocios más rentables y personas con propósito en lo que hacen.</p>
-      <div class="grid gap-8 md:grid-cols-2">
-        <div class="card-dark testimonial-card">
-          <p class="text-slate-300">"Pasamos de improvisar a tener un sistema que nos da orden y resultados."</p>
-          <p class="text-sm text-slate-500 mt-3">Natalie Navarro – Psicóloga y creadora digital</p>
-        </div>
-        <div class="card-dark testimonial-card">
-          <p class="text-slate-300">"Logré lanzar mi primer infoproducto y automatizar las ventas sin depender del algoritmo."</p>
-          <p class="text-sm text-slate-500 mt-3">Geiger Barbero – Marca personal de barbería y estética</p>
-        </div>
-        <div class="card-dark testimonial-card">
-          <p class="text-slate-300">"Dejamos de perder tiempo con tareas repetitivas y empezamos a escalar con un sistema real."</p>
-          <p class="text-sm text-slate-500 mt-3">ASIM Propiedades – Empresa del sector inmobiliario</p>
-        </div>
-        <div class="card-dark testimonial-card">
-          <p class="text-slate-300">"Optimizamos todo el proceso de ventas y dirección comercial para cerrar más clientes en menos tiempo."</p>
-          <p class="text-sm text-slate-500 mt-3">High Income Skills – Academia de Setters y Closers</p>
-        </div>
-      </div>
-      <div class="mt-16 stats-container grid grid-cols-1 md:grid-cols-2 gap-8 max-w-md mx-auto">
-        <div class="card-dark stat-card text-center">
-          <div class="stat-number text-3xl font-bold gradient-text mb-3">97%</div>
-          <p class="text-sm text-slate-400">de quienes aplican el sistema reportan mayor claridad y estructura comercial</p>
-        </div>
-        <div class="card-dark stat-card text-center">
-          <div class="stat-number text-3xl font-bold gradient-text mb-3">9.8</div>
-          <p class="text-sm text-slate-400">nivel promedio de satisfacción en mentorías personalizadas</p>
-        </div>
-      </div>
-      <div class="text-center mt-12">
-        <a href="https://contentflowconsulting.github.io/contentflow/" class="btn-cta">Aplicar al Programa</a>
-      </div>
-    </div>
-  </section>
+      const isFormValid = () => {
+        return (
+          formData.fullName &&
+          formData.phone &&
+          formData.email &&
+          formData.weeklyClients &&
+          formData.dailyCalls &&
+          formData.contentStrategy &&
+          formData.salesSystem &&
+          formData.monthlyRevenue
+        );
+      };
 
-  <!-- Página 4: Entregables -->
-  <section id="entregables" class="seccion-entregables bg-gradient-to-b from-black via-slate-950 to-black px-8 py-28 border-t border-slate-900">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center my-2">
-        <span class="badge-text px-3 py-3 rounded-md border border-blue-900 bg-gray-700 text-white text-sm md:text-base tracking-wide uppercase font-bold inline-block" style="font-family:'Poppins',sans-serif">ESTO ES LO QUE OBTIENES AL ENTRAR</span>
-      </div>
+      if (result) {
+        return (
+          <div className="min-h-screen bg-white flex items-center justify-center p-4">
+            <div className="max-w-2xl w-full bg-white rounded-2xl shadow-2xl border-2 border-gray-200 p-8 md:p-12 text-center animate-fadeIn">
+              <div className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center bg-blue-900">
+                <CheckCircle2 className="w-12 h-12 text-white" />
+              </div>
 
-      <h3 class="titulo-entregables text-center text-3xl md:text-4xl font-black mb-4 uppercase tracking-wide" style="font-family:'Poppins', sans-serif">ENTREGABLES DEL PROGRAMA<br/> <span class="gradient-text">CONTENT FLOW</span></h3>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">🚀 ¡Genial! Tu llamada ha sido confirmada</h2>
+              
+              <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-5 mb-5">
+                <div className="flex items-start gap-3 mb-3">
+                  <Mail className="w-5 h-5 text-blue-900 flex-shrink-0 mt-1" />
+                  <p className="text-left text-sm text-gray-800 font-medium">
+                    <span className="font-bold text-blue-900">En los próximos 30 minutos</span>, revisa tu correo electrónico. Recibirás mi análisis personalizado de tu caso con el paso a paso de cómo podríamos ayudarte a escalar tu negocio.
+                  </p>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <MessageCircle className="w-5 h-5 text-blue-900 flex-shrink-0 mt-1" />
+                  <p className="text-left text-sm text-gray-800 font-medium">
+                    A partir de ahora, <span className="font-bold text-blue-900">toda la comunicación será por WhatsApp</span>. Estate atento a los mensajes para coordinar los detalles de tu sesión.
+                  </p>
+                </div>
+              </div>
 
-      <p class="texto-necesitas text-center text-gray-300 font-semibold max-w-xl mx-auto mb-6 leading-snug px-4" style="line-height:1.6">Todo lo que necesitas para <span class="text-gray-200 font-bold">acelerar tu negocio</span> de servicios/infoproductos: estrategia, producción, captación y optimización, unificados en un <span class="text-gray-200 font-bold">sistema</span>.</p>
+              <div className="bg-gray-50 border-2 border-gray-200 rounded-xl p-4 mb-6">
+                <p className="text-xs text-gray-700 leading-relaxed">
+                  📌 <strong>Tip:</strong> Revisa tu carpeta de spam o promociones si no ves el correo en tu bandeja principal. Guarda mi número de WhatsApp para no perderte ninguna actualización.
+                </p>
+              </div>
 
-      <!-- Lista de entregables -->
-      <div class="mx-auto w-full max-w-2xl space-y-4">
-        <details class="ent-card">
-          <summary class="list-none">
-            <div class="flex items-center gap-3">
-              <span class="badge-square select-none">01</span>
-              <div class="flex-1 font-semibold">Acompañamiento 1:1</div>
-              <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <div className="pt-3">
+                <p className="text-base text-gray-600">
+                  ¡Nos vemos pronto! 👋
+                </p>
+              </div>
             </div>
-          </summary>
-          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Acompañamiento directo en estrategia y ejecución. Revisiones semanales para corregir rápido, mantener foco y avanzar con seguridad en cada fase.</div>
-        </details>
+          </div>
+        );
+      }
 
-        <details class="ent-card">
-          <summary class="list-none">
-            <div class="flex items-center gap-3">
-              <span class="badge-square select-none">02</span>
-              <div class="flex-1 font-semibold">Programa paso a paso</div>
-              <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      return (
+        <div className="min-h-screen bg-white py-10 px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-2xl border-2 border-gray-200 p-6 md:p-10">
+              <div className="space-y-6">
+                {/* Información personal */}
+                <div className="space-y-5 pb-6 border-b-2 border-gray-200">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-2">Nombre completo *</label>
+                    <input
+                      type="text"
+                      value={formData.fullName}
+                      onChange={(e) => handleInputChange('fullName', e.target.value)}
+                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-900 focus:border-blue-900 outline-none transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">Email *</label>
+                    <p className="text-xs text-gray-600 mb-2">(Usa el mismo con el que agendaste tu primera llamada)</p>
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-900 focus:border-blue-900 outline-none transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-2">Teléfono *</label>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-900 focus:border-blue-900 outline-none transition"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-3 pb-6 border-b-2 border-gray-200">
+                  <h2 className="text-base font-bold text-gray-900">En promedio, ¿cuántas personas están comprando tus servicios o programas cada semana? *</h2>
+                  <div className="space-y-2">
+                    {[
+                      { value: 'Ninguna por ahora', label: 'Ninguna por ahora.' },
+                      { value: 'Entre 1 y 10 personas', label: 'Entre 1 y 10 personas por semana.' },
+                      { value: 'Entre 11 y 25 personas', label: 'Entre 11 y 25 personas por semana.' },
+                      { value: 'Más de 50 personas', label: 'Más de 50 personas por semana.' }
+                    ].map((option) => (
+                      <label
+                        key={option.value}
+                        className={`flex items-center p-3 border rounded-lg cursor-pointer transition-all ${
+                          formData.weeklyClients === option.value ? 'border-blue-900 bg-blue-50' : 'border-gray-300 hover:border-blue-900'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="weeklyClients"
+                          value={option.value}
+                          checked={formData.weeklyClients === option.value}
+                          onChange={(e) => handleInputChange('weeklyClients', e.target.value)}
+                          className="w-4 h-4 text-blue-900"
+                        />
+                        <span className="ml-2 text-gray-900 font-medium text-sm">{option.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3 pb-6 border-b-2 border-gray-200">
+                  <h2 className="text-base font-bold text-gray-900">En promedio, ¿cuántas llamadas de venta calificadas estás teniendo al día? *</h2>
+                  <div className="space-y-2">
+                    {[
+                      { value: 'Ninguna todavía', label: 'Ninguna todavía.' },
+                      { value: '1 a 2 por día', label: '1 a 2 por día.' },
+                      { value: '2 a 5 por día', label: '2 a 5 por día.' },
+                      { value: '5 a 10 por día', label: '5 a 10 por día.' }
+                    ].map((option) => (
+                      <label
+                        key={option.value}
+                        className={`flex items-center p-3 border rounded-lg cursor-pointer transition-all ${
+                          formData.dailyCalls === option.value ? 'border-blue-900 bg-blue-50' : 'border-gray-300 hover:border-blue-900'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="dailyCalls"
+                          value={option.value}
+                          checked={formData.dailyCalls === option.value}
+                          onChange={(e) => handleInputChange('dailyCalls', e.target.value)}
+                          className="w-4 h-4 text-blue-900"
+                        />
+                        <span className="ml-2 text-gray-900 font-medium text-sm">{option.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3 pb-6 border-b-2 border-gray-200">
+                  <h2 className="text-base font-bold text-gray-900">¿Cuál es tu estrategia actual para vender con tu contenido? *</h2>
+                  <div className="space-y-2">
+                    {[
+                      { value: 'Estrategia clara y funciona', label: 'Tengo una estrategia clara y me está funcionando.' },
+                      { value: 'Tengo estrategia sin resultados', label: 'Tengo una estrategia, pero no está generando los resultados que quiero.' },
+                      { value: 'Sin estrategia definida', label: 'No tengo una estrategia definida.' }
+                    ].map((option) => (
+                      <label
+                        key={option.value}
+                        className={`flex items-center p-3 border rounded-lg cursor-pointer transition-all ${
+                          formData.contentStrategy === option.value ? 'border-blue-900 bg-blue-50' : 'border-gray-300 hover:border-blue-900'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="contentStrategy"
+                          value={option.value}
+                          checked={formData.contentStrategy === option.value}
+                          onChange={(e) => handleInputChange('contentStrategy', e.target.value)}
+                          className="w-4 h-4 text-blue-900"
+                        />
+                        <span className="ml-2 text-gray-900 font-medium text-sm">{option.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3 pb-6 border-b-2 border-gray-200">
+                  <h2 className="text-base font-bold text-gray-900">¿Qué tipo de sistema de ventas estás utilizando hoy? *</h2>
+                  <div className="space-y-2">
+                    {[
+                      { value: 'Ventas por mensajes/DM', label: 'Cierro ventas por mensajes o DM.' },
+                      { value: 'Ventas por llamadas', label: 'Cierro ventas por llamadas (orgánico o setters).' },
+                      { value: 'Automatizaciones', label: 'Uso automatizaciones (embudos, webinars, etc.).' },
+                      { value: 'Sin sistema definido', label: 'No tengo un sistema de ventas definido.' }
+                    ].map((option) => (
+                      <label
+                        key={option.value}
+                        className={`flex items-center p-3 border rounded-lg cursor-pointer transition-all ${
+                          formData.salesSystem === option.value ? 'border-blue-900 bg-blue-50' : 'border-gray-300 hover:border-blue-900'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="salesSystem"
+                          value={option.value}
+                          checked={formData.salesSystem === option.value}
+                          onChange={(e) => handleInputChange('salesSystem', e.target.value)}
+                          className="w-4 h-4 text-blue-900"
+                        />
+                        <span className="ml-2 text-gray-900 font-medium text-sm">{option.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3 pb-6">
+                  <h2 className="text-base font-bold text-gray-900">En promedio, ¿cuánto estás facturando actualmente al mes con tu negocio? *</h2>
+                  <div className="space-y-2">
+                    {[
+                      { value: 'Menos de $1.000 USD', label: 'Menos de $1.000 USD.' },
+                      { value: 'Entre $1.000 y $3.000 USD', label: 'Entre $1.000 y $3.000 USD.' },
+                      { value: 'Entre $3.000 y $8.000 USD', label: 'Entre $3.000 y $8.000 USD.' },
+                      { value: 'Más de $8.000 USD', label: 'Más de $8.000 USD.' }
+                    ].map((option) => (
+                      <label
+                        key={option.value}
+                        className={`flex items-center p-3 border rounded-lg cursor-pointer transition-all ${
+                          formData.monthlyRevenue === option.value ? 'border-blue-900 bg-blue-50' : 'border-gray-300 hover:border-blue-900'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="monthlyRevenue"
+                          value={option.value}
+                          checked={formData.monthlyRevenue === option.value}
+                          onChange={(e) => handleInputChange('monthlyRevenue', e.target.value)}
+                          className="w-4 h-4 text-blue-900"
+                        />
+                        <span className="ml-2 text-gray-900 font-medium text-sm">{option.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-5 flex justify-center">
+                  <button
+                    onClick={handleSubmit}
+                    disabled={!isFormValid() || isSubmitting}
+                    className={`px-10 py-2.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all ${
+                      isFormValid() && !isSubmitting
+                        ? 'bg-blue-900 text-white hover:bg-blue-800 shadow-lg hover:scale-105'
+                        : 'bg-gray-300 text-white cursor-not-allowed'
+                    }`}
+                  >
+                    {isSubmitting ? 'Enviando...' : 'Confirmar mi llamada'}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
             </div>
-          </summary>
-          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Frameworks, guiones y plantillas listas para usar en contenido, anuncios y funnels. Implementas sin adivinar y con ejemplos reales.</div>
-        </details>
+          </div>
 
-        <details class="ent-card">
-          <summary class="list-none">
-            <div class="flex items-center gap-3">
-              <span class="badge-square select-none">03</span>
-              <div class="flex-1 font-semibold">Sistema en Notion + Automatizaciones</div>
-              <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </div>
-          </summary>
-          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Dashboards de métricas, contenidos y ventas en un solo lugar. Automatizamos tareas repetitivas para liberar tiempo y mantener el flujo.</div>
-        </details>
+          <style>{`
+            @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+            .animate-fadeIn { animation: fadeIn 0.5s ease-out; }
+          `}</style>
+        </div>
+      );
+    }
 
-        <details class="ent-card">
-          <summary class="list-none">
-            <div class="flex items-center gap-3">
-              <span class="badge-square select-none">04</span>
-              <div class="flex-1 font-semibold">Auditoría y optimización</div>
-              <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </div>
-          </summary>
-          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Monitoreamos tus resultados para identificar oportunidades, ajustar estrategias y escalar lo que funciona. Cada revisión mejora el rendimiento de tu sistema y te mantiene avanzando con precisión.</div>
-        </details>
-
-      </div>
-
-      <div class="text-center mt-12">
-        <a href="https://contentflowconsulting.github.io/contentflow/" class="btn-cta">Aplicar al Programa</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Página 5: Responsabilidad Legal / Garantías -->
-  <section id="legal" class="seccion-legal bg-black px-8 py-16 border-t border-slate-900">
-    <div class="max-w-5xl mx-auto text-center text-slate-500 text-sm space-y-4">
-      <p class="texto-legal"><strong>Aviso importante:</strong> Los resultados mostrados corresponden a experiencias reales de clientes, pero no garantizan resultados idénticos. El nivel de resultados que cada persona obtenga dependerá de su compromiso, ejecución y circunstancias individuales.</p>
-      <p class="texto-legal">Content Flow es un programa de formación y acompañamiento estratégico, no asesoría financiera. Los testimonios compartidos reflejan experiencias auténticas, sin constituir promesas de resultados.</p>
-      <p class="texto-legal">Al aplicar al programa, usted confirma haber leído y aceptado nuestros términos y condiciones.</p>
-    </div>
-  </section>
-
-  <footer class="text-center py-10 border-t border-slate-800">
-    <p class="text-slate-600 text-sm">© <span id="year"></span> Content Flow. Todos los derechos reservados.</p>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<LeadQualificationForm />);
+  </script>
 </body>
 </html>
