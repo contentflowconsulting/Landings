@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contentflowconsulting</title>
-  <meta name="description" content="Instala tu propio Ecosistema Hibrido en Instagram y convierte tu marca personal en un sistema de ventas high-ticket." />
+  <title>Client System</title>
+  <meta name="description" content="Instala un Sistema de Clientes predecible. Deja de depender del algoritmo y entiende, en números, cómo tu negocio genera ventas." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -13,6 +13,20 @@
     .gradient-text{background:linear-gradient(135deg,var(--brand-1),var(--brand-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .shadow-glow{box-shadow:0 0 30px rgba(0,212,255,.25)}
     .card-dark{background:rgba(20,20,20,.6);border:1px solid rgba(255,255,255,.05);border-radius:1rem;padding:2.5rem;transition:transform 0.3s ease;font-size:1.125rem}
+    
+    /* Degradado negro a gris para fases */
+    .fase-gradient {
+      background: linear-gradient(135deg, #000000 0%, #404040 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:1rem;
+      padding:2.5rem;
+      transition:transform 0.3s ease;
+    }
+    
+    .fase-gradient:hover {
+      transform: scale(1.05);
+    }
+    
     details summary {cursor:pointer;}
     
     /* Efectos Hover */
@@ -242,181 +256,226 @@
         padding-bottom: 2rem !important;
       }
     }
+    
+    /* Imagen en contenedores de fase */
+    .fase-image {
+      max-width: 200px;
+      height: auto;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .fase-image {
+        max-width: 150px;
+      }
+    }
   </style>
 </head>
 <body class="antialiased">
 
-  <!-- Página 1: VSL -->
+  <!-- Página 1: HERO -->
   <section class="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 pt-4 pb-16 bg-black">
     <div class="mb-4 md:mb-6 mt-0">
-      <img src="Content Flow Ofic.png" alt="Content Flow Logo" class="logo-hover mx-auto w-24 md:w-40 drop-shadow-lg" />
+      <img src="Sin_fondo.png" alt="Client System Logo" class="logo-hover mx-auto w-24 md:w-40 drop-shadow-lg" />
     </div>
     <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-10 md:space-y-0 md:space-x-20">
       <div class="flex-1 max-w-xl space-y-4 md:space-y-6">
-        <p class="texto-para-creativos text-slate-300 text-lg md:text-3xl font-medium leading-snug" style="font-family: 'Poppins', sans-serif;">Para creativos, mentores y marcas personales que buscan escalar sin quemarse</p>
+        <p class="texto-para-creativos text-slate-300 text-lg md:text-3xl font-medium leading-snug" style="font-family: 'Poppins', sans-serif;">Para coaches, consultores y marcas personales que venden servicios</p>
         <h1 class="titulo-principal text-2xl md:text-4xl font-black leading-tight">
-          INSTALA TU <span class="gradient-text">ECOSISTEMA HIBRIDO</span><br/>
-          Y CONVIERTE SEGUIDORES EN CLIENTES
+          INSTALA UN <span class="gradient-text">SISTEMA DE CLIENTES</span> PREDECIBLE
         </h1>
-        <p class="texto-mismo-sistema text-slate-200 text-lg md:text-2xl leading-snug">El mismo sistema híbrido de <span class="font-semibold">contenido + anuncios + automatización</span> que usamos para generar clientes high-ticket en Instagram.</p>
+        <p class="texto-mismo-sistema text-slate-200 text-lg md:text-2xl leading-snug">Deja de depender del algoritmo y entiende, en números, cómo tu negocio genera ventas</p>
+        <p class="text-slate-300 text-base md:text-lg leading-relaxed">Client System te ayuda a pasar de ventas impredecibles y desorden operativo a un negocio claro, medible y con un sistema que puedes sostener.</p>
       </div>
       <div class="flex-1 max-w-2xl video-wrapper shadow-glow rounded-xl overflow-hidden" style="transform: scale(1.1);">
         <div class="relative pt-[56.25%]">
-          <iframe class="absolute inset-0 w-full h-full rounded-xl" src="https://www.youtube.com/embed/VIDEO_ID" title="VSL Content Flow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="absolute inset-0 w-full h-full rounded-xl" src="https://www.youtube.com/embed/VIDEO_ID" title="VSL Client System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
     <div class="text-center mt-12 md:mt-16">
-      <a href="https://contentflowconsulting.github.io/contentflow/" class="btn-cta">Aplicar al Programa</a>
+      <a href="#" class="btn-cta">Aplicar al Programa</a>
     </div>
   </section>
 
-  <!-- Página 2: Vehículo -->
+  <!-- Página 2: LAS 2 FASES DEL SISTEMA -->
   <section id="fases" class="bg-gradient-to-b from-black via-slate-950 to-black px-8 py-24">
     <div class="max-w-3xl mx-auto space-y-12">
-      <h2 class="text-center text-4xl md:text-5xl font-black mb-16">El sistema <span class="gradient-text">Content Flow</span></h2>
+      <h2 class="text-center text-4xl md:text-5xl font-black mb-16">LAS 2 FASES <span class="gradient-text">DEL SISTEMA</span></h2>
 
-      <div class="card-dark">
-        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">Marca Personal Híbrida</h3>
-        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">Orgánico + anuncios estratégicos</p>
-        <p class="vehiculo-descripcion text-slate-400">Una marca personal 100% orgánica no tiene sentido si quieres vender. Integramos anuncios estratégicos de bajo costo que atraen a la audiencia ideal y perfilan tus redes para que dejen de ser solo contenido y empiecen a vender.</p>
+      <!-- FASE 1 -->
+      <div class="fase-gradient">
+        <img src="1-Photoroom.png" alt="Fase 1" class="fase-image" />
+        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">FASE 1 –<br/>Marca Personal Clara y Ejecutable</h3>
+        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">Orden, claridad y criterio antes de vender más</p>
+        <p class="vehiculo-descripcion text-slate-300">En esta fase construimos una base clara y funcional para tu negocio, alineando tu oferta, tu mensaje y tu posicionamiento para que todo tenga una dirección concreta. El objetivo es que entiendas cómo funciona tu negocio, reduzcas la fricción en la toma de decisiones y empieces a operar con mayor claridad y control, sin improvisar ni sumar complejidad innecesaria.</p>
       </div>
 
-      <div class="card-dark">
-        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">Sistema de Alta Conversión</h3>
-        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">5-7 llamadas al día con clientes calificados</p>
-        <p class="vehiculo-descripcion text-slate-400">Instalamos el mismo sistema probado que usamos para llenar agendas con 5-7 llamadas de ventas al día con clientes realmente calificados, listos para comprar. Sin depender del algoritmo.</p>
-      </div>
-
-      <div class="card-dark">
-        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">Sistema de Contenido Estratégico</h3>
-        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">Instalamos el sistema en tus redes para convertir seguidores en clientes</p>
-        <p class="vehiculo-descripcion text-slate-400">Cada publicación tiene un propósito: posicionar, educar y avanzar a tu audiencia hacia la compra. Diseñamos contigo un calendario estratégico y automatizado para que tu contenido deje de ser aleatorio y empiece a generar ventas todos los días.</p>
+      <!-- FASE 2 -->
+      <div class="fase-gradient">
+        <img src="2-Photoroom.png" alt="Fase 2" class="fase-image" />
+        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">FASE 2 –<br/>Instalación del Sistema de Clientes</h3>
+        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">De la atención a las ventas, sin depender del algoritmo</p>
+        <p class="vehiculo-descripcion text-slate-300">Una vez que la base está clara, instalamos un sistema real y repetible para transformar interés en oportunidades concretas. Aquí se estructura tu contenido, tus conversaciones por DM y tu proceso de decisión para que atraer, calificar y vender deje de ser improvisado. No se trata de presionar ni de perseguir personas, sino de tener un sistema que haga el trabajo previo y te permita vender con calma, claridad y consistencia.</p>
       </div>
 
       <div class="text-center mt-12">
-        <a href="https://contentflowconsulting.github.io/contentflow/" class="btn-cta">Aplicar al Programa</a>
+        <a href="#" class="btn-cta">Aplicar al Programa</a>
       </div>
     </div>
   </section>
 
-  <!-- Página 3: Autoridad / Casos de Éxito -->
+  <!-- Página 3: BLOQUE DE AUTORIDAD -->
   <section id="autoridad" class="bg-black px-8 py-24 border-t border-slate-900">
     <div class="max-w-5xl mx-auto text-center">
-      <div class="mb-12">
-        <span class="px-3 py-3 rounded-md border border-blue-900 bg-gray-700 text-white text-sm md:text-base tracking-wide uppercase font-bold inline-block" style="font-family:'Poppins',sans-serif">ALGUNOS DE NUESTROS CLIENTES</span>
+      <h2 class="text-3xl md:text-4xl font-black mb-8">BLOQUE DE AUTORIDAD <span class="text-slate-400 font-normal">(sin humo)</span></h2>
+      
+      <div class="space-y-6 text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto mb-16">
+        <p>Client System no nace de teoría ni de promesas rápidas.</p>
+        <p>Nace de años trabajando dentro de operaciones reales, viendo repetirse el mismo problema una y otra vez y entendiendo que sin sistema, no hay tranquilidad.</p>
+        <p class="font-semibold text-xl">Mis clientes no destacan por "hacer más",<br/>sino por entender mejor su negocio y tomar decisiones con criterio.</p>
       </div>
-      <p class="text-slate-400 mb-12">Antes de lanzar este nuevo sistema, ayudé a marcas personales, artistas y empresas a construir estructuras de venta, contenido y automatización que hoy siguen funcionando sin mí, y que ayudaron a pulir cada componente de este método.<br/><br/>El resultado: procesos claros, negocios más rentables y personas con propósito en lo que hacen.</p>
-      <div class="grid gap-8 md:grid-cols-2">
-        <div class="card-dark testimonial-card">
-          <p class="text-slate-300">"Pasamos de improvisar a tener un sistema que nos da orden y resultados."</p>
-          <p class="text-sm text-slate-500 mt-3">Natalie Navarro – Psicóloga y creadora digital</p>
-        </div>
-        <div class="card-dark testimonial-card">
-          <p class="text-slate-300">"Logré lanzar mi primer infoproducto y automatizar las ventas sin depender del algoritmo."</p>
-          <p class="text-sm text-slate-500 mt-3">Geiger Barbero – Marca personal de barbería y estética</p>
-        </div>
-        <div class="card-dark testimonial-card">
-          <p class="text-slate-300">"Dejamos de perder tiempo con tareas repetitivas y empezamos a escalar con un sistema real."</p>
-          <p class="text-sm text-slate-500 mt-3">ASIM Propiedades – Empresa del sector inmobiliario</p>
-        </div>
-        <div class="card-dark testimonial-card">
-          <p class="text-slate-300">"Optimizamos todo el proceso de ventas y dirección comercial para cerrar más clientes en menos tiempo."</p>
-          <p class="text-sm text-slate-500 mt-3">High Income Skills – Academia de Setters y Closers</p>
-        </div>
-      </div>
-      <div class="mt-16 stats-container grid grid-cols-1 md:grid-cols-2 gap-8 max-w-md mx-auto">
-        <div class="card-dark stat-card text-center">
-          <div class="stat-number text-3xl font-bold gradient-text mb-3">97%</div>
-          <p class="text-sm text-slate-400">de quienes aplican el sistema reportan mayor claridad y estructura comercial</p>
-        </div>
-        <div class="card-dark stat-card text-center">
-          <div class="stat-number text-3xl font-bold gradient-text mb-3">9.8</div>
-          <p class="text-sm text-slate-400">nivel promedio de satisfacción en mentorías personalizadas</p>
-        </div>
-      </div>
+
       <div class="text-center mt-12">
-        <a href="https://contentflowconsulting.github.io/contentflow/" class="btn-cta">Aplicar al Programa</a>
+        <a href="#" class="btn-cta">Aplicar al Programa</a>
       </div>
     </div>
   </section>
 
-  <!-- Página 4: Entregables -->
+  <!-- Página 4: QUÉ OBTIENES AL ENTRAR -->
   <section id="entregables" class="seccion-entregables bg-gradient-to-b from-black via-slate-950 to-black px-8 py-28 border-t border-slate-900">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center my-2">
-        <span class="badge-text px-3 py-3 rounded-md border border-blue-900 bg-gray-700 text-white text-sm md:text-base tracking-wide uppercase font-bold inline-block" style="font-family:'Poppins',sans-serif">ESTO ES LO QUE OBTIENES AL ENTRAR</span>
+      <h2 class="text-center text-3xl md:text-4xl font-black mb-6">QUÉ OBTIENES AL ENTRAR</h2>
+      
+      <p class="text-center text-gray-300 text-lg max-w-3xl mx-auto mb-12 leading-relaxed">Este programa está pensado para personas que quieren dejar de improvisar y empezar a operar su negocio con criterio.</p>
+
+      <h3 class="titulo-entregables text-center text-2xl md:text-3xl font-black mb-4 uppercase tracking-wide" style="font-family:'Poppins', sans-serif"><span class="gradient-text">CLIENT SYSTEM</span> – ACOMPAÑAMIENTO 1:1</h3>
+
+      <p class="texto-necesitas text-center text-gray-300 font-semibold max-w-2xl mx-auto mb-8 leading-snug px-4">Todo lo que recibes para ordenar tu negocio y construir un sistema de ventas que funcione más allá del algoritmo.</p>
+
+      <div class="card-dark mb-10 text-center">
+        <h4 class="text-2xl font-bold mb-6">Client System – Programa 1:1</h4>
+        <div class="grid md:grid-cols-2 gap-4 text-left">
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 text-xl">✔</span>
+            <span>Sesiones 1:1 de estrategia</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 text-xl">✔</span>
+            <span>Acompañamiento continuo por chat</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 text-xl">✔</span>
+            <span>Hoja de ruta personalizada</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 text-xl">✔</span>
+            <span>Programa de entrenamiento grabado paso a paso</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 text-xl">✔</span>
+            <span>Sistema de contenido, prospección y ventas</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 text-xl">✔</span>
+            <span>Criterio y seguimiento</span>
+          </div>
+        </div>
+        <p class="text-slate-400 mt-6 italic">No se trata de motivarte.<br/>Se trata de ordenar tu negocio para que funcione.</p>
       </div>
 
-      <h3 class="titulo-entregables text-center text-3xl md:text-4xl font-black mb-4 uppercase tracking-wide" style="font-family:'Poppins', sans-serif">ENTREGABLES DEL PROGRAMA<br/> <span class="gradient-text">CONTENT FLOW</span></h3>
-
-      <p class="texto-necesitas text-center text-gray-300 font-semibold max-w-xl mx-auto mb-6 leading-snug px-4" style="line-height:1.6">Todo lo que necesitas para <span class="text-gray-200 font-bold">acelerar tu negocio</span> de servicios/infoproductos: estrategia, producción, captación y optimización, unificados en un <span class="text-gray-200 font-bold">sistema</span>.</p>
-
-      <!-- Lista de entregables -->
+      <!-- Lista de entregables expandibles -->
       <div class="mx-auto w-full max-w-2xl space-y-4">
         <details class="ent-card">
           <summary class="list-none">
             <div class="flex items-center gap-3">
-              <span class="badge-square select-none">01</span>
-              <div class="flex-1 font-semibold">Acompañamiento 1:1</div>
+              <span class="badge-square select-none">✔</span>
+              <div class="flex-1 font-semibold">Sesiones 1:1 de estrategia</div>
               <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
           </summary>
-          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Acompañamiento directo en estrategia y ejecución. Revisiones semanales para corregir rápido, mantener foco y avanzar con seguridad en cada fase.</div>
+          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Espacios privados para trabajar directamente sobre tu negocio, tomar decisiones con criterio y ajustar el sistema según tu contexto real.</div>
         </details>
 
         <details class="ent-card">
           <summary class="list-none">
             <div class="flex items-center gap-3">
-              <span class="badge-square select-none">02</span>
-              <div class="flex-1 font-semibold">Programa paso a paso</div>
+              <span class="badge-square select-none">✔</span>
+              <div class="flex-1 font-semibold">Acompañamiento continuo por chat</div>
               <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
           </summary>
-          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Frameworks, guiones y plantillas listas para usar en contenido, anuncios y funnels. Implementas sin adivinar y con ejemplos reales.</div>
+          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Soporte directo para resolver dudas, destrabar bloqueos y evitar que tomes decisiones a ciegas mientras ejecutas.</div>
         </details>
 
         <details class="ent-card">
           <summary class="list-none">
             <div class="flex items-center gap-3">
-              <span class="badge-square select-none">03</span>
-              <div class="flex-1 font-semibold">Sistema en Notion + Automatizaciones</div>
+              <span class="badge-square select-none">✔</span>
+              <div class="flex-1 font-semibold">Hoja de ruta personalizada</div>
               <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
           </summary>
-          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Dashboards de métricas, contenidos y ventas en un solo lugar. Automatizamos tareas repetitivas para liberar tiempo y mantener el flujo.</div>
+          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Un plan claro y priorizado que te dice qué hacer, en qué orden y qué no tocar, según tu punto de partida y objetivos.</div>
         </details>
 
         <details class="ent-card">
           <summary class="list-none">
             <div class="flex items-center gap-3">
-              <span class="badge-square select-none">04</span>
-              <div class="flex-1 font-semibold">Auditoría y optimización</div>
+              <span class="badge-square select-none">✔</span>
+              <div class="flex-1 font-semibold">Programa de entrenamiento grabado paso a paso</div>
               <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
           </summary>
-          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Monitoreamos tus resultados para identificar oportunidades, ajustar estrategias y escalar lo que funciona. Cada revisión mejora el rendimiento de tu sistema y te mantiene avanzando con precisión.</div>
+          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Entrenamiento estructurado dentro de la plataforma privada donde el sistema está explicado con claridad para que sepas exactamente cómo implementarlo.</div>
+        </details>
+
+        <details class="ent-card">
+          <summary class="list-none">
+            <div class="flex items-center gap-3">
+              <span class="badge-square select-none">✔</span>
+              <div class="flex-1 font-semibold">Sistema de contenido, prospección y ventas</div>
+              <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </summary>
+          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Un proceso integrado para atraer, conversar y vender sin improvisar ni depender del algoritmo.</div>
+        </details>
+
+        <details class="ent-card">
+          <summary class="list-none">
+            <div class="flex items-center gap-3">
+              <span class="badge-square select-none">✔</span>
+              <div class="flex-1 font-semibold">Criterio y seguimiento</div>
+              <svg class="chev transition-transform duration-200 ml-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </summary>
+          <div class="contenido-expandible pt-4 pl-14 text-slate-400 text-left">Acompañamiento para interpretar métricas, ajustar lo necesario y tomar decisiones con lógica, no por intuición ni urgencia.</div>
         </details>
 
       </div>
 
       <div class="text-center mt-12">
-        <a href="https://contentflowconsulting.github.io/contentflow/" class="btn-cta">Aplicar al Programa</a>
+        <a href="#" class="btn-cta">Aplicar al Programa</a>
       </div>
     </div>
   </section>
 
-  <!-- Página 5: Responsabilidad Legal / Garantías -->
-  <section id="legal" class="seccion-legal bg-black px-8 py-16 border-t border-slate-900">
-    <div class="max-w-5xl mx-auto text-center text-slate-500 text-sm space-y-4">
-      <p class="texto-legal"><strong>Aviso importante:</strong> Los resultados mostrados corresponden a experiencias reales de clientes, pero no garantizan resultados idénticos. El nivel de resultados que cada persona obtenga dependerá de su compromiso, ejecución y circunstancias individuales.</p>
-      <p class="texto-legal">Content Flow es un programa de formación y acompañamiento estratégico, no asesoría financiera. Los testimonios compartidos reflejan experiencias auténticas, sin constituir promesas de resultados.</p>
-      <p class="texto-legal">Al aplicar al programa, usted confirma haber leído y aceptado nuestros términos y condiciones.</p>
+  <!-- Página 5: APARTADO LEGAL -->
+  <section id="legal" class="seccion-legal px-8 py-16 border-t border-slate-900" style="background: linear-gradient(180deg, #1a1f2e 0%, #0f1419 100%);">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-8">
+        <img src="Punto_de_Inflexion-removebg-preview.png" alt="Logo Legal" class="mx-auto w-32 md:w-40 opacity-80" />
+      </div>
+      <div class="text-slate-400 text-sm md:text-base space-y-4">
+        <p class="texto-legal"><strong class="text-slate-300">Aviso importante:</strong> Client System es un programa de acompañamiento estratégico diseñado para ayudarte a ordenar tu negocio y construir un sistema de ventas claro. Los resultados dependen de la correcta aplicación del sistema, el contexto de cada negocio y el nivel de compromiso del participante. No se garantizan resultados específicos ni plazos determinados.</p>
+        <p class="texto-legal text-slate-500 text-xs">© 2026 Client System. Todos los derechos reservados.</p>
+      </div>
     </div>
   </section>
 
-  <footer class="text-center py-10 border-t border-slate-800">
-    <p class="text-slate-600 text-sm">© <span id="year"></span> Content Flow. Todos los derechos reservados.</p>
+  <footer class="text-center py-10 border-t border-slate-800" style="background-color: #000;">
+    <p class="text-slate-600 text-sm">© <span id="year"></span> Client System. Todos los derechos reservados.</p>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
