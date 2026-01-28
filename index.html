@@ -120,6 +120,16 @@
       box-shadow: 0 0 20px rgba(0,212,255,0.4);
     }
     
+    /* Títulos de entregables más pequeños */
+    .ent-card .flex-1 {
+      font-size: 0.95rem;
+    }
+    
+    /* Texto expandible más pequeño */
+    .contenido-expandible {
+      font-size: 0.875rem;
+    }
+    
     .badge-square{
       display:inline-flex;
       align-items:center;
@@ -259,7 +269,7 @@
     
     /* Imagen en contenedores de fase */
     .fase-image {
-      max-width: 350px;
+      max-width: 400px;
       height: auto;
       margin: 0 auto 1.5rem;
       display: block;
@@ -267,7 +277,22 @@
     
     @media (max-width: 768px) {
       .fase-image {
-        max-width: 250px;
+        max-width: 300px;
+        order: 999;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+      }
+      
+      .fase-gradient {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .vehiculo-titulo,
+      .vehiculo-subtitulo,
+      .vehiculo-descripcion {
+        text-align: center;
       }
     }
   </style>
@@ -281,12 +306,12 @@
     </div>
     <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-10 md:space-y-0 md:space-x-20">
       <div class="flex-1 max-w-xl space-y-4 md:space-y-6">
-        <p class="texto-para-creativos text-slate-300 text-lg md:text-3xl font-medium leading-snug" style="font-family: 'Poppins', sans-serif;">Para coaches, consultores y marcas personales que venden servicios</p>
+        <p class="texto-para-creativos text-slate-300 text-lg md:text-3xl font-medium leading-snug" style="font-family: 'Poppins', sans-serif;">Para coaches y consultores</p>
         <h1 class="titulo-principal text-2xl md:text-4xl font-black leading-tight">
           INSTALA UN <span class="gradient-text">SISTEMA DE CLIENTES</span> PREDECIBLE
         </h1>
-        <p class="texto-mismo-sistema text-slate-200 text-lg md:text-2xl leading-snug">Deja de depender del algoritmo y entiende, en números, cómo tu negocio genera ventas</p>
-        <p class="text-slate-300 text-base md:text-lg leading-relaxed">Client System te ayuda a pasar de ventas impredecibles y desorden operativo a un negocio claro, medible y con un sistema que puedes sostener.</p>
+        <p class="texto-para-creativos text-slate-300 text-lg md:text-3xl font-medium leading-snug" style="font-family: 'Poppins', sans-serif;">Deja de depender del algoritmo y entiende, en números, cómo tu negocio genera ventas</p>
+        <p class="texto-para-creativos text-slate-300 text-lg md:text-3xl font-medium leading-snug" style="font-family: 'Poppins', sans-serif;">Client System te ayuda a pasar de ventas impredecibles y desorden operativo a un negocio claro, medible y con un sistema que puedes sostener.</p>
       </div>
       <div class="flex-1 max-w-2xl video-wrapper shadow-glow rounded-xl overflow-hidden" style="transform: scale(1.1);">
         <div class="relative pt-[56.25%]">
@@ -295,7 +320,7 @@
       </div>
     </div>
     <div class="text-center mt-12 md:mt-16">
-      <a href="#" class="btn-cta">Aplicar al Programa</a>
+      <a href="https://calendly.com/miguelandaram/llamada-de-evaluacion" class="btn-cta">Aplicar al Programa</a>
     </div>
   </section>
 
@@ -321,7 +346,7 @@
       </div>
 
       <div class="text-center mt-12">
-        <a href="#" class="btn-cta">Aplicar al Programa</a>
+        <a href="https://calendly.com/miguelandaram/llamada-de-evaluacion" class="btn-cta">Aplicar al Programa</a>
       </div>
     </div>
   </section>
@@ -410,7 +435,7 @@
       <p class="text-center text-slate-400 mt-8 italic text-lg">No se trata de motivarte.<br/>Se trata de ordenar tu negocio para que funcione.</p>
 
       <div class="text-center mt-12">
-        <a href="#" class="btn-cta">Aplicar al Programa</a>
+        <a href="https://calendly.com/miguelandaram/llamada-de-evaluacion" class="btn-cta">Aplicar al Programa</a>
       </div>
     </div>
   </section>
