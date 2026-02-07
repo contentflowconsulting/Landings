@@ -21,6 +21,7 @@
       border-radius:1rem;
       padding:2.5rem;
       transition:transform 0.3s ease;
+      text-align: center;
     }
     
     .fase-gradient:hover {
@@ -120,16 +121,6 @@
       box-shadow: 0 0 20px rgba(0,212,255,0.4);
     }
     
-    /* Títulos de entregables más pequeños */
-    .ent-card .flex-1 {
-      font-size: 0.9rem;
-    }
-    
-    /* Texto expandible más pequeño */
-    .contenido-expandible {
-      font-size: 0.825rem;
-    }
-    
     .badge-square{
       display:inline-flex;
       align-items:center;
@@ -144,6 +135,16 @@
     }
     .ent-card:hover .badge-square {
       transform: none;
+    }
+    
+    /* Títulos de entregables más pequeños */
+    .ent-card .flex-1 {
+      font-size: 0.95rem;
+    }
+    
+    /* Contenido expandible más pequeño */
+    .contenido-expandible {
+      font-size: 0.85rem;
     }
     
     details[open] .chev{transform:rotate(180deg)}
@@ -168,8 +169,7 @@
     
     @media (max-width: 768px) {
       .titulo-principal {
-        font-size: 1.1rem !important;
-        font-weight: 700 !important;
+        font-size: 1.7rem !important;
       }
     }
     
@@ -224,11 +224,6 @@
         margin-top: 0.5rem !important;
       }
       
-      .contenido-expandible {
-        text-align: left !important;
-        margin-top: 1rem !important;
-      }
-      
       .badge-text {
         font-size: 0.75rem !important;
         padding: 0.5rem 0.75rem !important;
@@ -254,6 +249,18 @@
       .vehiculo-descripcion {
         font-size: 0.9rem !important;
       }
+      
+      /* Mover imagen al final en mobile */
+      .fase-gradient {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .fase-image-mobile {
+        order: 999;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+      }
     }
     
     /* PÁGINA 5 - LEGAL */
@@ -270,38 +277,15 @@
     
     /* Imagen en contenedores de fase */
     .fase-image {
-      max-width: 420px;
-      width: 100%;
+      max-width: 400px;
       height: auto;
-      margin: 0 auto 0.75rem auto;
+      margin: 0 auto 1.5rem;
       display: block;
-    }
-    
-    .vehiculo-titulo {
-      font-size: 1.15rem;
     }
     
     @media (max-width: 768px) {
       .fase-image {
-        max-width: 90%;
-        width: 90%;
-        margin: 0 auto 0.5rem auto;
-        padding: 0;
-      }
-      
-      .fase-gradient {
-        text-align: center;
-        padding: 1.5rem;
-      }
-      
-      .vehiculo-titulo {
-        font-size: 1.1rem !important;
-        text-align: center;
-      }
-      
-      .vehiculo-subtitulo,
-      .vehiculo-descripcion {
-        text-align: center;
+        max-width: 280px;
       }
     }
   </style>
@@ -309,21 +293,21 @@
 <body class="antialiased">
 
   <!-- Página 1: HERO -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 pt-4 pb-16 relative overflow-hidden" style="background: radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.15) 0%, transparent 50%), radial-gradient(ellipse at top right, rgba(124, 58, 237, 0.12) 0%, transparent 50%), radial-gradient(ellipse at bottom left, rgba(147, 51, 234, 0.10) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(109, 40, 217, 0.08) 0%, transparent 50%), #000;">
+  <section class="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 pt-4 pb-16 bg-black">
     <div class="mb-4 md:mb-6 mt-0">
-      <img src="Sin fondo.png" alt="Client System Logo" class="logo-hover mx-auto w-24 md:w-40 drop-shadow-lg" />
+      <img src="Sin_fondo.png" alt="Client System Logo" class="logo-hover mx-auto w-24 md:w-40 drop-shadow-lg" />
     </div>
     <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-10 md:space-y-0 md:space-x-20">
       <div class="flex-1 max-w-xl space-y-4 md:space-y-6">
-        <p class="texto-para-creativos text-slate-300 text-base md:text-2xl font-bold leading-snug" style="font-family: 'Poppins', sans-serif;">Para coaches, consultores y marcas personales</p>
-        <h1 class="titulo-principal text-xl md:text-3xl font-black leading-tight">
-          INSTALA UN <span class="gradient-text">SISTEMA DE CLIENTES</span>: DEJA DE DEPENDER DEL ALGORITMO Y ENTIENDE, EN NÚMEROS, CÓMO TU NEGOCIO <span class="gradient-text">GENERA VENTAS</span>
+        <p class="texto-para-creativos text-slate-300 text-lg md:text-3xl font-medium leading-snug" style="font-family: 'Poppins', sans-serif;">Para coaches, consultores y marcas personales</p>
+        <h1 class="titulo-principal text-2xl md:text-4xl font-black leading-tight">
+          INSTALA UN <span class="gradient-text">SISTEMA DE CLIENTES</span> PREDECIBLE
         </h1>
-        <p class="texto-para-creativos text-slate-300 text-base md:text-2xl font-bold leading-snug" style="font-family: 'Poppins', sans-serif;">Client System te ayuda a pasar de ventas impredecibles y desorden operativo a un negocio claro, medible y con un sistema que puedes sostener.</p>
+        <p class="texto-mismo-sistema text-slate-200 text-lg md:text-3xl leading-snug text-center">Client System te ayuda a pasar de ventas impredecibles y desorden operativo a un negocio claro, medible y con un sistema que puedes sostener.</p>
       </div>
-      <div class="flex-1 max-w-2xl video-wrapper shadow-glow rounded-xl overflow-hidden" style="transform: scale(1.1);">
-        <div class="relative pt-[56.25%]">
-          <iframe class="absolute inset-0 w-full h-full rounded-xl" src="https://www.youtube.com/embed/VIDEO_ID" title="VSL Client System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="flex-1 max-w-2xl">
+        <div class="video-wrapper shadow-glow rounded-xl overflow-hidden mx-auto" style="max-width: 360px; aspect-ratio: 9/16;">
+          <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/SCe-oWeM4A8" title="VSL Client System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 1rem;"></iframe>
         </div>
       </div>
     </div>
@@ -332,27 +316,24 @@
     </div>
   </section>
 
-  <!-- Separador -->
-  <div class="border-t border-slate-800" style="opacity: 0.5;"></div>
-
   <!-- Página 2: LAS 2 FASES DEL SISTEMA -->
   <section id="fases" class="bg-gradient-to-b from-black via-slate-950 to-black px-8 py-24">
     <div class="max-w-3xl mx-auto space-y-12">
-      <h2 class="text-center text-xl md:text-2xl font-black mb-16">LAS 2 FASES <span class="gradient-text">DEL SISTEMA</span></h2>
+      <h2 class="text-center text-4xl md:text-5xl font-black mb-16">LAS 2 FASES <span class="gradient-text">DEL SISTEMA</span></h2>
 
       <!-- FASE 1 -->
       <div class="fase-gradient">
-        <img src="1-Photoroom.png" alt="Fase 1" class="fase-image" />
-        <h3 class="vehiculo-titulo font-bold mb-2">Marca Personal Ejecutable</h3>
-        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">Orden, claridad y criterio.</p>
+        <img src="1-Photoroom.png" alt="Fase 1" class="fase-image fase-image-mobile" />
+        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">Marca Personal Clara y Ejecutable</h3>
+        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">Orden, claridad y criterio antes de vender más</p>
         <p class="vehiculo-descripcion text-slate-300">En esta fase construimos una base clara y funcional para tu negocio, alineando tu oferta, tu mensaje y tu posicionamiento para que todo tenga una dirección concreta. El objetivo es que entiendas cómo funciona tu negocio, reduzcas la fricción en la toma de decisiones y empieces a operar con mayor claridad y control, sin improvisar ni sumar complejidad innecesaria.</p>
       </div>
 
       <!-- FASE 2 -->
       <div class="fase-gradient">
-        <img src="2-Photoroom.png" alt="Fase 2" class="fase-image" />
-        <h3 class="vehiculo-titulo font-bold mb-2">Sistema de Clientes</h3>
-        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">De la atención a las ventas.</p>
+        <img src="2-Photoroom.png" alt="Fase 2" class="fase-image fase-image-mobile" />
+        <h3 class="vehiculo-titulo text-2xl font-bold mb-2">Instalación del Sistema de Clientes</h3>
+        <p class="vehiculo-subtitulo text-cyan-400 font-semibold mb-2 text-lg">De la atención a las ventas, sin depender del algoritmo</p>
         <p class="vehiculo-descripcion text-slate-300">Una vez que la base está clara, instalamos un sistema real y repetible para transformar interés en oportunidades concretas. Aquí se estructura tu contenido, tus conversaciones por DM y tu proceso de decisión para que atraer, calificar y vender deje de ser improvisado. No se trata de presionar ni de perseguir personas, sino de tener un sistema que haga el trabajo previo y te permita vender con calma, claridad y consistencia.</p>
       </div>
 
@@ -451,13 +432,10 @@
     </div>
   </section>
 
-  <!-- Separador -->
-  <div class="border-t border-slate-800" style="opacity: 0.5;"></div>
-
   <!-- Página 5: APARTADO LEGAL -->
-  <section id="legal" class="seccion-legal px-8 py-16" style="background: linear-gradient(180deg, #1a1f2e 0%, #0f1419 100%);">
+  <section id="legal" class="seccion-legal px-8 py-16 border-t border-slate-900" style="background: linear-gradient(180deg, #1a1f2e 0%, #0f1419 100%);">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="mb-4">
+      <div class="mb-8">
         <img src="Punto_de_Inflexion-removebg-preview.png" alt="Logo Legal" class="mx-auto w-20 md:w-24 opacity-80" />
       </div>
       <div class="text-slate-400 text-xs md:text-sm space-y-3">
