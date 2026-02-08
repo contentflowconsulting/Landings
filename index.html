@@ -295,7 +295,7 @@
   <!-- Página 1: HERO -->
   <section class="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 pt-4 pb-16 bg-black">
     <div class="mb-4 md:mb-6 mt-0">
-      <img src="Sin_fondo.png" alt="Client System Logo" class="logo-hover mx-auto w-24 md:w-40 drop-shadow-lg" style="mix-blend-mode: screen; filter: brightness(1.2) contrast(1.1);" />
+      <img src="Sin_fondo.png" alt="Client System Logo" class="logo-hover mx-auto w-24 md:w-40 drop-shadow-lg" />
     </div>
     <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-10 md:space-y-0 md:space-x-20">
       <div class="flex-1 max-w-xl space-y-4 md:space-y-6">
@@ -309,27 +309,74 @@
         <div class="video-wrapper shadow-glow rounded-xl overflow-hidden mx-auto" style="max-width: 360px; aspect-ratio: 9/16; position: relative;">
           <video 
             id="vslVideo"
-            autoplay 
-            muted 
             playsinline 
-            controls
-            style="width:100%;height:100%;display:block;border-radius:1rem;object-fit:cover;">
+            controlslist="nodownload nofullscreen noremoteplayback"
+            disablePictureInPicture
+            style="width:100%;height:100%;display:block;border-radius:1rem;object-fit:cover;pointer-events:none;">
             <source src="VSL.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
-          <button 
-            onclick="document.getElementById('vslVideo').muted=false; this.style.opacity='0'; setTimeout(() => this.style.display='none', 300);"
-            style="position:absolute;top:20px;right:20px;background:transparent;border:none;cursor:pointer;z-index:10;transition:all 0.3s ease;opacity:0.7;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;"
-            onmouseover="this.style.opacity='1'; this.style.transform='scale(1.15)'"
-            onmouseout="this.style.opacity='0.7'; this.style.transform='scale(1)'">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 1px 3px rgba(0,0,0,0.5));">
+          
+          <!-- Overlay de play inicial -->
+          <div id="playOverlay" onclick="iniciarVideo()" style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:20;">
+            <div style="width:80px;height:80px;border-radius:50%;background:rgba(0,212,255,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,212,255,0.5);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white" style="margin-left:4px;">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Control de audio (solo mute/unmute) -->
+          <button id="audioBtn" onclick="toggleAudio()" style="display:none;position:absolute;bottom:20px;right:20px;background:rgba(0,0,0,0.6);border:2px solid rgba(255,255,255,0.3);border-radius:50%;width:48px;height:48px;cursor:pointer;z-index:15;align-items:center;justify-content:center;backdrop-filter:blur(10px);transition:all 0.3s ease;">
+            <svg id="audioIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
               <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
             </svg>
           </button>
         </div>
       </div>
+      
+      <script>
+        let videoIniciado = false;
+        
+        function iniciarVideo() {
+          const video = document.getElementById('vslVideo');
+          const overlay = document.getElementById('playOverlay');
+          const audioBtn = document.getElementById('audioBtn');
+          
+          video.muted = false;
+          video.play();
+          overlay.style.display = 'none';
+          audioBtn.style.display = 'flex';
+          videoIniciado = true;
+          
+          // Deshabilitar seek (adelantar/atrasar)
+          video.addEventListener('seeking', function(e) {
+            if(videoIniciado && !video.ended) {
+              video.currentTime = video.currentTime;
+            }
+          });
+          
+          // Cuando termine, permitir replay
+          video.addEventListener('ended', function() {
+            overlay.style.display = 'flex';
+            videoIniciado = false;
+          });
+        }
+        
+        function toggleAudio() {
+          const video = document.getElementById('vslVideo');
+          const icon = document.getElementById('audioIcon');
+          
+          video.muted = !video.muted;
+          
+          if(video.muted) {
+            icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
+          } else {
+            icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
+          }
+        }
+      </script>
     </div>
     <div class="text-center mt-12 md:mt-16">
       <a href="https://calendly.com/miguelandaram/llamada-de-evaluacion" class="btn-cta">Aplicar al Programa</a>
