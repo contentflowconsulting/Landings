@@ -39,15 +39,18 @@
     .num{font-size:.95rem;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
     .type{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
     .type .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;position:relative;top:-1px}
-    .locked .type .dot{background:#5b6573}
     h2{font-size:1.18rem;font-weight:700;letter-spacing:-.01em;margin-top:6px}
     .desc{color:var(--soft);font-size:.95rem;margin-top:4px;max-width:480px}
     .action{justify-self:end}
     .btn{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;font-weight:600;font-size:.88rem;padding:11px 18px;border-radius:10px;transition:all .2s}
     .btn-open{background:var(--fg);color:#07090c}
     .btn-open:hover{background:var(--accent)}
-    .btn-lock{border:1px solid var(--line-strong);color:var(--fg)}
-    .btn-lock:hover{border-color:#25d366;color:#25d366}
+    .btn-ghost{border:1px solid var(--line-strong);color:var(--fg);background:transparent;cursor:pointer;font-family:inherit}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+    .btn-wa{background:#25d366;color:#06210f}
+    .btn-wa:hover{background:#3be37b}
+    button.btn{border:0;cursor:pointer;font-family:inherit}
+    button.btn.btn-open{border:0}
     .btn svg{width:15px;height:15px}
     .hint{display:block;font-size:.75rem;color:var(--muted);margin-top:8px;text-align:right}
 
@@ -56,6 +59,37 @@
     .note p{color:var(--soft);font-size:.95rem}
     .note strong{color:var(--fg)}
     footer{border-top:1px solid var(--line);padding:24px 0 40px;color:#5b6573;font-size:.8rem}
+
+
+    /* visor y aviso */
+    .overlay{position:fixed;inset:0;z-index:50;background:rgba(3,5,8,.82);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px}
+    .overlay.open{display:flex}
+    body.noscroll{overflow:hidden}
+    .viewer{background:var(--panel);border:1px solid var(--line-strong);border-radius:16px;width:100%;max-width:960px;max-height:100%;display:flex;flex-direction:column;overflow:hidden}
+    .viewer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)}
+    .viewer-head h3{font-size:1rem;font-weight:700}
+    .x{background:none;border:0;color:var(--muted);font-size:1.6rem;line-height:1;cursor:pointer;padding:2px 8px}
+    .x:hover{color:var(--fg)}
+    .viewer-body{overflow:auto;padding:16px 20px;background:#05070a;-webkit-overflow-scrolling:touch}
+    .viewer-body video{width:100%;border-radius:10px;background:#000;display:block}
+    .viewer-body img{width:100%;height:auto;border-radius:8px;display:block;margin-bottom:12px}
+    .viewer-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:16px 20px;border-top:1px solid var(--line)}
+    .viewer-foot p{color:var(--soft);font-size:.92rem}
+    .viewer-foot .btns{display:flex;gap:10px;flex-wrap:wrap}
+    .lock{background:var(--panel);border:1px solid var(--line-strong);border-radius:18px;max-width:440px;width:100%;padding:34px 28px 28px;text-align:center;position:relative}
+    .lock .x{position:absolute;top:10px;right:12px}
+    .lock .icon{width:52px;height:52px;border-radius:50%;background:var(--fg);color:#07090c;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .lock .icon svg{width:22px;height:22px}
+    .lock .tag{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    .lock h3{font-size:1.4rem;font-weight:800;letter-spacing:-.015em;margin:8px 0 10px;line-height:1.2}
+    .lock p{color:var(--soft);font-size:.95rem;margin-bottom:22px}
+    .lock .btn{width:100%;justify-content:center;padding:14px 18px}
+    @media (max-width:640px){
+      .overlay{padding:0}
+      .viewer{border-radius:0;height:100%;max-height:100%}
+      .viewer-body{flex:1;padding:12px}
+      .lock{margin:16px}
+    }
 
     @media (max-width:640px){
       .wrap{padding:0 18px}
@@ -81,7 +115,7 @@
 
   <main class="wrap">
     <section class="hero">
-      <div class="count">6 recursos disponibles</div>
+      <div class="count">7 recursos disponibles</div>
       <h1>Biblioteca de recursos Client System</h1>
       <p class="lead">Lo que armé para ordenar mi contenido y mis mensajes, listo para que lo uses.</p>
     </section>
@@ -95,7 +129,7 @@
           <p class="desc">Pega tu bio o el guion de tu próximo reel. Te marca la frase que atrae curiosos y la reescribe para que le hable a quien sí puede pagar tu servicio.</p>
         </div>
         <div class="action">
-          <a data-goatcounter-click="01-espejo" class="btn btn-open" href="https://claude.ai/public/artifacts/80a18d59-63df-4730-83eb-7e5cf9253aee" target="_blank" rel="noopener">Ver recurso</a>
+          <a class="btn btn-open" data-res="01-espejo" data-name="Espejo de Mensaje" href="https://claude.ai/public/artifacts/80a18d59-63df-4730-83eb-7e5cf9253aee" target="_blank" rel="noopener">Ver recurso</a>
           <span class="hint">Pide una cuenta de Claude</span>
         </div>
       </article>
@@ -108,71 +142,164 @@
           <p class="desc">Antes de pagarle a una agencia, un editor o un setter: con tus números te dice si ya estás listo para delegar o qué tienes que ordenar primero.</p>
         </div>
         <div class="action">
-          <a data-goatcounter-click="02-delegation-test" class="btn btn-open" href="https://claude.ai/public/artifacts/1da07825-ea7f-4695-9218-5d0d4cccf7c2" target="_blank" rel="noopener">Ver recurso</a>
+          <a class="btn btn-open" data-res="02-delegation-test" data-name="Delegation Test" href="https://claude.ai/public/artifacts/1da07825-ea7f-4695-9218-5d0d4cccf7c2" target="_blank" rel="noopener">Ver recurso</a>
         </div>
       </article>
 
       <article class="item">
         <div class="num">03</div>
         <div>
+          <div class="type"><span class="dot"></span>Clase · Video 4 min</div>
+          <h2>Las 4 Barras</h2>
+          <p class="desc">Clase filtrada: lo que hace cada reel en la cabeza de quien te ve, para que dejes de publicar al azar.</p>
+        </div>
+        <div class="action">
+          <button type="button" class="btn btn-open" data-res="03-clase-4-barras" data-name="Las 4 Barras" data-view="video">Ver recurso</button>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">04</div>
+        <div>
           <div class="type"><span class="dot"></span>Guía · PDF</div>
           <h2>Guía de Estructura de Contenido</h2>
           <p class="desc">Tu semana de reels e historias en una página: qué publicar cada día, cuándo vender y cuándo no, para que tu contenido deje de depender de la inspiración.</p>
         </div>
         <div class="action">
-          <a data-goatcounter-click="03-guia-estructura" class="btn btn-open" href="guia-estructura-de-contenido.pdf" target="_blank" rel="noopener">Ver recurso</a>
+          <button type="button" class="btn btn-open" data-res="04-guia-estructura" data-name="Guía de Estructura de Contenido" data-view="pdf">Ver recurso</button>
         </div>
       </article>
 
-      <article class="item locked">
-        <div class="num">04</div>
+      <article class="item">
+        <div class="num">05</div>
         <div>
           <div class="type"><span class="dot"></span>Plantilla · Notion</div>
           <h2>Tracker de contenido</h2>
           <p class="desc">Todo tu contenido en un tablero de Notion: de la idea a publicada, con calendario y los números de cada pieza (alcance, conversaciones, leads y agendas).</p>
         </div>
         <div class="action">
-          <a data-goatcounter-click="04-tracker" class="btn btn-lock" href="https://wa.me/56930333013?text=Hola%20Miguel%2C%20quiero%20el%20tracker%20de%20contenido" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Pídemelo</a>
-          <span class="hint">Te llega por WhatsApp</span>
+          <a class="btn btn-open" data-res="05-tracker" data-name="Tracker de contenido" href="https://wa.me/56930333013?text=Hola%20Miguel%2C%20quiero%20el%20tracker%20de%20contenido" target="_blank" rel="noopener">Ver recurso</a>
+          <span class="hint">Te lo envío por WhatsApp</span>
         </div>
       </article>
 
-      <article class="item locked">
-        <div class="num">05</div>
+      <article class="item">
+        <div class="num">06</div>
         <div>
           <div class="type"><span class="dot"></span>Guía · Claude</div>
           <h2>El reel que se corta solo</h2>
           <p class="desc">Deja de pasar horas editando: Claude corta los silencios, se queda con tu mejor toma y te saca los subtítulos.</p>
         </div>
         <div class="action">
-          <a data-goatcounter-click="05-reel-que-se-corta-solo" class="btn btn-lock" href="https://wa.me/56930333013?text=Hola%20Miguel%2C%20quiero%20la%20gu%C3%ADa%20del%20reel%20que%20se%20corta%20solo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Pídemelo</a>
-          <span class="hint">Te llega por WhatsApp</span>
+          <a class="btn btn-open" data-res="06-reel-que-se-corta-solo" data-name="El reel que se corta solo" href="https://claude.ai/public/artifacts/24ac8dff-d6d0-43bf-a761-23a85b846513" target="_blank" rel="noopener">Ver recurso</a>
         </div>
       </article>
 
-      <article class="item locked">
-        <div class="num">06</div>
+      <article class="item">
+        <div class="num">07</div>
         <div>
-          <div class="type"><span class="dot"></span>Video + guía</div>
+          <div class="type"><span class="dot"></span>Guía · Claude</div>
           <h2>Tu Setter con IA</h2>
           <p class="desc">Pega el mensaje o la captura de un lead y te dice si califica y qué preguntarle para seguir la conversación.</p>
         </div>
         <div class="action">
-          <a data-goatcounter-click="06-setter-con-ia" class="btn btn-lock" href="https://wa.me/56930333013?text=Hola%20Miguel%2C%20quiero%20el%20Setter%20con%20IA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Pídemelo</a>
-          <span class="hint">Te llega por WhatsApp</span>
+          <a class="btn btn-open" data-res="07-setter-con-ia" data-name="Tu Setter con IA" href="https://docs.google.com/document/d/1OWV7Ob2wb3RbboqF_sXlCO1kp8dg3ILgg-v7hx9Ku5c/edit?usp=sharing" target="_blank" rel="noopener">Ver recurso</a>
         </div>
       </article>
     </section>
 
     <div class="note">
-      <p><strong>¿Quieres que lo veamos en tu caso?</strong> Escríbeme y revisamos tu cuenta.</p>
-      <a class="btn btn-lock" data-goatcounter-click="07-revisar-mi-caso" href="https://wa.me/56930333013?text=Hola%20Miguel%2C%20quiero%20que%20revisemos%20mi%20caso" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <p><strong>¿Quieres que lo veamos en tu caso?</strong> Conoce cómo trabajo y agenda una llamada si te hace sentido.</p>
+      <a class="btn btn-open" data-track="nota-aceleradora" href="./">Conocer la Aceleradora</a>
     </div>
   </main>
 
   <footer>
     <div class="wrap">© 2026 Punto de Inflexión · Miguel Andara</div>
   </footer>
+
+  <div class="overlay" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+    <div class="viewer">
+      <div class="viewer-head">
+        <h3 id="viewer-title"></h3>
+        <button class="x" type="button" data-close aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="viewer-body" id="viewer-body"></div>
+      <div class="viewer-foot">
+        <p>¿Quieres aplicarlo en tu caso?</p>
+        <div class="btns">
+          <a class="btn btn-ghost" id="viewer-download" href="guia-estructura-de-contenido.pdf" download style="display:none">Descargar PDF</a>
+          <a class="btn btn-open" data-track="visor-aceleradora" href="./">Conocer la Aceleradora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="lock" role="dialog" aria-modal="true" aria-labelledby="lock-title">
+    <div class="lock">
+      <button class="x" type="button" data-close aria-label="Cerrar">&times;</button>
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+      <div class="tag">Ya abriste 2 recursos</div>
+      <h3 id="lock-title">¿Quieres seguir viendo más?</h3>
+      <p>Escríbeme por WhatsApp y te envío este recurso y el resto de la biblioteca.</p>
+      <a class="btn btn-wa" id="lock-wa" href="#" target="_blank" rel="noopener">Escribirme por WhatsApp</a>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var LIMIT=2, KEY='pdi_recursos_abiertos', WA='56930333013';
+    var mem=[];
+    function load(){try{var v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[]}catch(e){return mem}}
+    function save(v){mem=v;try{localStorage.setItem(KEY,JSON.stringify(v))}catch(e){}}
+    function track(path,title){try{if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:path,title:title||path,event:true})}}catch(e){}}
+    function gate(id){var o=load();if(o.indexOf(id)>-1)return true;if(o.length>=LIMIT)return false;o.push(id);save(o);return true}
+
+    var viewer=document.getElementById('viewer'), vbody=document.getElementById('viewer-body'),
+        vtitle=document.getElementById('viewer-title'), vdl=document.getElementById('viewer-download'),
+        lock=document.getElementById('lock'), lockwa=document.getElementById('lock-wa');
+
+    function openOv(el){el.classList.add('open');document.body.classList.add('noscroll')}
+    function closeAll(){
+      [viewer,lock].forEach(function(o){o.classList.remove('open')});
+      document.body.classList.remove('noscroll');
+      vbody.innerHTML='';
+    }
+    function showLock(id,name){
+      lockwa.href='https://wa.me/'+WA+'?text='+encodeURIComponent('Hola Miguel, quiero ver "'+name+'" y el resto de los recursos');
+      track('bloqueado-'+id,'Bloqueado: '+name);
+      openOv(lock);
+    }
+    function showViewer(kind,name){
+      vtitle.textContent=name; vbody.innerHTML='';
+      if(kind==='video'){
+        var v=document.createElement('video');v.controls=true;v.playsInline=true;v.preload='metadata';v.src='clase-4-barras.mp4';
+        vbody.appendChild(v); vdl.style.display='none';
+      }else{
+        ['guia-pagina-1.jpg','guia-pagina-2.jpg'].forEach(function(f,i){
+          var im=document.createElement('img');im.src=f;im.alt='Guía de Estructura de Contenido, página '+(i+1);im.loading='lazy';vbody.appendChild(im);
+        });
+        vdl.style.display='';
+      }
+      openOv(viewer);
+    }
+
+    document.addEventListener('click',function(e){
+      var t=e.target.closest('[data-res],[data-track],[data-close]');
+      if(!t){return}
+      if(t.hasAttribute('data-close')){closeAll();return}
+      if(t.hasAttribute('data-track')){track(t.getAttribute('data-track'));return}
+      var id=t.getAttribute('data-res'), name=t.getAttribute('data-name');
+      if(!gate(id)){e.preventDefault();showLock(id,name);return}
+      track('abrir-'+id,'Abrir: '+name);
+      if(t.hasAttribute('data-view')){showViewer(t.getAttribute('data-view'),name)}
+    });
+    [viewer,lock].forEach(function(o){o.addEventListener('click',function(e){if(e.target===o)closeAll()})});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+    vdl.addEventListener('click',function(){track('descargar-guia-pdf','Descargar PDF guía')});
+    lockwa.addEventListener('click',function(){track('wa-desbloquear','WhatsApp desde bloqueo')});
+  })();
+  </script>
   <script data-goatcounter="https://puntodeinflexion.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
