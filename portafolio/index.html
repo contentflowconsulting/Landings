@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miguel Andara · Portafolio de edición</title>
+<meta name="description" content="Guion y edición de reels para marcas y creadores. Portafolio de Miguel Andara, Santiago de Chile.">
+<meta property="og:title" content="Miguel Andara · Portafolio de edición">
+<meta property="og:description" content="Guion y edición de reels para marcas y creadores.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://contentflowconsulting.github.io/Landings/portafolio/img/geiger-salon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Hoja de contacto de editor: fondo gris frío, piezas verticales 9:16 como fotogramas, un acento rojo de "grabando". */
+  --paper:#eceef1;
+  --card:#ffffff;
+  --ink:#15171c;
+  --muted:#5b616c;
+  --line:#d5d9df;
+  --rec:#e5322d;
+  --display:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body:"Manrope", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+header{padding:48px 0 32px;border-bottom:1px solid var(--line)}
+.top{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
+.rec{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rec::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--rec)}
+h1{font-family:var(--display);font-stretch:78%;font-weight:850;font-size:clamp(44px,8vw,88px);line-height:.92;letter-spacing:-.01em;margin:14px 0 0;text-wrap:balance;text-transform:uppercase}
+.role{font-family:var(--display);font-stretch:90%;font-weight:600;font-size:clamp(18px,2.4vw,24px);margin:12px 0 0}
+.intro{max-width:60ch;color:var(--muted);margin:18px 0 0}
+.contact{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--ink);font-weight:600;font-size:14px;text-decoration:none;background:transparent}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn:focus-visible,.reel a:focus-visible{outline:3px solid var(--rec);outline-offset:3px}
+.mail{font-size:14px;color:var(--muted);margin-top:8px;text-align:right}
+
+section{padding:40px 0 8px}
+.sechead{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-bottom:20px}
+h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:28px;text-transform:uppercase;margin:0;letter-spacing:.01em}
+.sechead p{margin:0;color:var(--muted);font-size:15px;max-width:60ch}
+
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.reel{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.frame{position:relative;display:block;aspect-ratio:9/16;background:#000;overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.reel a.frame:hover img{transform:scale(1.03)}
+.play{position:absolute;inset:auto auto 12px 12px;display:inline-flex;align-items:center;gap:6px;padding:6px 10px 6px 8px;border-radius:999px;background:rgba(10,10,12,.72);color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.play svg{width:14px;height:14px}
+.body{padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.client{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+h3{font-family:var(--display);font-stretch:88%;font-weight:750;font-size:19px;line-height:1.15;margin:0;text-wrap:balance}
+.desc{margin:0;font-size:14.5px;color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tag{font-size:12px;font-weight:600;padding:4px 9px;border-radius:6px;background:var(--paper);color:var(--ink)}
+.tag.tool{background:transparent;border:1px solid var(--line);color:var(--muted)}
+
+.skills{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.skills li{border-top:3px solid var(--ink);padding-top:10px}
+.skills b{display:block;font-family:var(--display);font-stretch:88%;font-size:17px;font-weight:750}
+.skills span{font-size:14px;color:var(--muted)}
+
+footer{padding:40px 0 56px;margin-top:40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+  header{padding-top:32px}
+  .mail{text-align:left}
+  .grid{gap:14px}
+  .body{padding:12px 12px 14px}
+  h3{font-size:17px}
+  .desc{font-size:13.5px}
+}
+@media (max-width:400px){.grid{grid-template-columns:1fr}.skills{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.frame img{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="top">
+      <div>
+        <span class="rec">Portafolio de edición · Santiago, Chile</span>
+        <h1>Miguel Andara</h1>
+        <p class="role">Edición de reels y contenido para redes sociales</p>
+        <p class="intro">Escribo el guion y edito reels verticales para marcas y creadores: gancho en los primeros segundos, subtítulos, gráficos en movimiento, b-roll y audio limpio. Toca cualquier pieza para verla en Instagram.</p>
+      </div>
+      <div>
+        <div class="contact">
+          <a class="btn solid" href="mailto:miguelandaram@gmail.com">Escríbeme</a>
+          <a class="btn" href="https://www.instagram.com/miguelandaram/">Instagram</a>
+          <a class="btn" href="https://www.linkedin.com/in/miguelandara">LinkedIn</a>
+        </div>
+        <p class="mail">miguelandaram@gmail.com</p>
+      </div>
+    </div>
+  </header>
+
+  <section aria-labelledby="clientes">
+    <div class="sechead">
+      <h2 id="clientes">Para clientes</h2>
+      <p>Piezas publicadas en las cuentas de cada marca.</p>
+    </div>
+    <div class="grid">
+      <article class="reel">
+        <a class="frame" href="https://www.instagram.com/reel/C_luVw2SSip/" aria-label="Ver Mi mayor error cuando decidí ser barbero en Instagram">
+          <img src="img/geiger-error.jpg" alt="Geiger Martínez sentado en un café con el texto Mi mayor error cuando decidí ser barbero" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Reel</span>
+        </a>
+        <div class="body">
+          <span class="client">Geiger Martínez · barbería y belleza</span>
+          <h3>Mi mayor error cuando decidí ser barbero</h3>
+          <p class="desc">Historia a cámara con gancho en pantalla desde el primer segundo.</p>
+          <div class="tags"><span class="tag">Edición</span><span class="tag tool">CapCut</span></div>
+        </div>
+      </article>
+      <article class="reel">
+        <a class="frame" href="https://www.instagram.com/reel/C_bwCBWsLwz/" aria-label="Ver Para salir de donde estás en Instagram">
+          <img src="img/geiger-salon.jpg" alt="Interior de la barbería con clientes en los sillones y el texto Para salir de donde estás, no necesitas más plata" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Reel</span>
+        </a>
+        <div class="body">
+          <span class="client">Geiger Martínez · barbería y belleza</span>
+          <h3>Para salir de donde estás</h3>
+          <p class="desc">Día a día del salón con subtítulos y mensaje de marca.</p>
+          <div class="tags"><span class="tag">Edición</span><span class="tag tool">CapCut</span></div>
+        </div>
+      </article>
+      <article class="reel">
+        <a class="frame" href="https://www.instagram.com/reel/DPUqzrGjrrV/" aria-label="Ver Lo que consumes a diario en Instagram">
+          <img src="img/consumes.jpg" alt="Primer plano de un ojo que refleja la pantalla de un celular, con el texto consumiéndote" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>0:47</span>
+        </a>
+        <div class="body">
+          <span class="client">Preston Rich · música</span>
+          <h3>Lo que consumes a diario</h3>
+          <p class="desc">Narración sobre b-roll cinematográfico, con textos que entran al ritmo de la voz.</p>
+          <div class="tags"><span class="tag">Guion</span><span class="tag">Edición</span><span class="tag tool">CapCut + agente de edición</span></div>
+        </div>
+      </article>
+      <article class="reel">
+        <a class="frame" href="https://www.instagram.com/reel/DQKyhM7j78G/" aria-label="Ver Bob Marley tenía razón en Instagram">
+          <img src="img/marley.jpg" alt="Preston Rich habla a cámara con un subtítulo azul sobre Bob Marley" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>1:03</span>
+        </a>
+        <div class="body">
+          <span class="client">Preston Rich · música</span>
+          <h3>Bob Marley tenía razón</h3>
+          <p class="desc">A cámara con cortes a b-roll y subtítulos en el color de la marca.</p>
+          <div class="tags"><span class="tag">Guion</span><span class="tag">Edición</span><span class="tag tool">CapCut + agente de edición</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="propio">
+    <div class="sechead">
+      <h2 id="propio">Contenido propio</h2>
+      <p>Idea, guion, grabación y edición, de punta a punta.</p>
+    </div>
+    <div class="grid">
+      <article class="reel">
+        <a class="frame" href="https://www.instagram.com/reel/DecqjL1hWfe/" aria-label="Ver El teléfono en la orquesta en Instagram">
+          <img src="img/telefono.jpg" alt="Orquesta juvenil ensayando, con el título Paré el ensayo de una orquesta completa" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>1:02</span>
+        </a>
+        <div class="body">
+          <span class="client">@miguelandaram</span>
+          <h3>El teléfono en la orquesta</h3>
+          <p class="desc">Historia contada en dos tomas, con b-roll y títulos editoriales.</p>
+          <div class="tags"><span class="tag">Guion</span><span class="tag">Grabación</span><span class="tag">Edición</span><span class="tag tool">CapCut + agente de edición</span></div>
+        </div>
+      </article>
+      <article class="reel">
+        <a class="frame" href="https://www.instagram.com/reel/DeVBcfwsT12/" aria-label="Ver Delegaste antes de entender en Instagram">
+          <img src="img/delegaste.jpg" alt="Miguel habla a cámara con el texto No te lo ahorra en amarillo" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>1:15</span>
+        </a>
+        <div class="body">
+          <span class="client">@miguelandaram</span>
+          <h3>Delegaste antes de entender</h3>
+          <p class="desc">A cámara con gráficos en movimiento y textos clave que marcan cada idea.</p>
+          <div class="tags"><span class="tag">Guion</span><span class="tag">Grabación</span><span class="tag">Edición</span><span class="tag tool">CapCut + agente de edición</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="hago">
+    <div class="sechead"><h2 id="hago">Qué hago en cada reel</h2></div>
+    <ul class="skills">
+      <li><b>Gancho y guion</b><span>Lo que se dice y se ve en los primeros 3 segundos.</span></li>
+      <li><b>Cortes y ritmo</b><span>Sin silencios ni tiempos muertos.</span></li>
+      <li><b>Subtítulos y textos</b><span>Legibles en el celular, con el estilo de la marca.</span></li>
+      <li><b>B-roll y gráficos</b><span>Apoyo visual en los momentos clave.</span></li>
+      <li><b>Audio</b><span>Voz limpia, efectos y mezcla de música.</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Miguel Andara · miguelandaram@gmail.com</span>
+    <span>Actualizado en noviembre de 2026</span>
+  </footer>
+</div>
+</body>
+</html>
